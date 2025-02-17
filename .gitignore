@@ -1,0 +1,5 @@
+vivado.*
+vivado_pid*
+*.cache/*
+*.hw/*
+*.runs/*
