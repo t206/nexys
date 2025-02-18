@@ -337,7 +337,7 @@
         "inst_hier_path": "microblaze_0",
         "parameters": {
           "C_AREA_OPTIMIZED": {
-            "value": "1"
+            "value": "0"
           },
           "C_DEBUG_ENABLED": {
             "value": "1"
@@ -356,6 +356,12 @@
           },
           "C_USE_BARREL": {
             "value": "1"
+          },
+          "C_USE_DIV": {
+            "value": "0"
+          },
+          "C_USE_FPU": {
+            "value": "0"
           },
           "C_USE_HW_MUL": {
             "value": "1"
