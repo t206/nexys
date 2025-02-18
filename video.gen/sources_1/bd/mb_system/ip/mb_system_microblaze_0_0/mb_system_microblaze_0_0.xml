@@ -24665,7 +24665,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_FPU</spirit:name>
         <spirit:displayName>Enable Floating Point Unit</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_FPU" spirit:choiceRef="choice_pairs_7bfd418d">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_USE_FPU" spirit:choiceRef="choice_pairs_7bfd418d">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_REORDER_INSTR</spirit:name>
@@ -26379,7 +26379,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
     <spirit:parameter>
       <spirit:name>C_USE_FPU</spirit:name>
       <spirit:displayName>Enable Floating Point Unit</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_FPU" spirit:choiceRef="choice_pairs_7bfd418d" spirit:order="59" spirit:configGroups="1 Instructions">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_FPU" spirit:choiceRef="choice_pairs_7bfd418d" spirit:order="59" spirit:configGroups="1 Instructions">2</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -26455,7 +26455,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_FPU_EXCEPTION">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_FPU_EXCEPTION">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>

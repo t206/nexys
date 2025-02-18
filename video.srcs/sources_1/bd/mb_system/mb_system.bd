@@ -361,7 +361,7 @@
             "value": "0"
           },
           "C_USE_FPU": {
-            "value": "0"
+            "value": "2"
           },
           "C_USE_HW_MUL": {
             "value": "1"
