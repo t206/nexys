@@ -1,6 +1,6 @@
 # 100 MHz System Reference Oscillator
 # create_clock -period 10.000 -name sys_clk -waveform {0.000 5.000} [get_ports sys_clk]
-set_property IOSTANDARD LVCMOS25 [get_ports sys_clk]
+# set_property IOSTANDARD LVCMOS25 [get_ports sys_clk]
 set_property PACKAGE_PIN R4 [get_ports sys_clk]
 
 # Board Reset Switch
