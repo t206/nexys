@@ -10,6 +10,14 @@ set_property PULLTYPE PULLUP [get_ports ext_reset_b]
 set_max_delay -from [get_ports ext_reset_b] -to * 4.000
 set_min_delay -from [get_ports ext_reset_b] -to * 0.000
 
+# UART Serial Interface
+set_property IOSTANDARD LVCMOS33 [get_ports rs232_uart_*]
+set_property PACKAGE_PIN AA19 [get_ports rs232_uart_rxd]
+set_property PACKAGE_PIN V18 [get_ports rs232_uart_txd]
+
+
+
+
 # Userclk (frequency to be measured, 400 MHz maximum for Nexys Video Board)
 # Userclks are on connector JC1, pins 1(P) and 2(N)
 # create_clock -period 2.520 -name userclk_p -waveform {0.000 1.260} [get_ports userclk_p]
