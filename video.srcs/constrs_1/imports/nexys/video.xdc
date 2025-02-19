@@ -14,6 +14,10 @@ set_min_delay -from [get_ports ext_reset_b] -to * 0.000
 set_property IOSTANDARD LVCMOS33 [get_ports rs232_uart_*]
 set_property PACKAGE_PIN AA19 [get_ports rs232_uart_rxd]
 set_property PACKAGE_PIN V18 [get_ports rs232_uart_txd]
+set_max_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 4.000
+set_min_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 0.000
+set_max_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 0.000
 
 
 
