@@ -19,8 +19,9 @@ set_min_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 0.000
 set_max_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 0.000
 
-
-
+# DDR3 Interface
+set_max_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 13.000
+set_min_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 0.000
 
 # Userclk (frequency to be measured, 400 MHz maximum for Nexys Video Board)
 # Userclks are on connector JC1, pins 1(P) and 2(N)
