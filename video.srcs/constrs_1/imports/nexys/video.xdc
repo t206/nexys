@@ -13,7 +13,7 @@ set_min_delay -from [get_ports ext_reset_b] -to [get_clocks *] 0.000
 set_property IOSTANDARD LVCMOS33 [get_ports rs232_uart_*]
 set_property PACKAGE_PIN AA19 [get_ports rs232_uart_rxd]
 set_property PACKAGE_PIN V18 [get_ports rs232_uart_txd]
-set_max_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 11.000
+set_max_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 12.000
 set_min_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 0.000
 set_max_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 0.000
@@ -42,7 +42,7 @@ set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 0.000
 
 # SPI Flash I/O
 set_max_delay -from [get_ports spi_flash_*] -to [get_clocks *] 4.000
-set_min_delay -from [get_ports spi_flash_*] -to [get_clocks *] -5.000
+set_min_delay -from [get_ports spi_flash_*] -to [get_clocks *] -5.100
 set_max_delay -from [get_clocks *] -to [get_ports spi_flash_*] 15.000
 set_min_delay -from [get_clocks *] -to [get_ports spi_flash_*] 0.000
 
