@@ -7,8 +7,8 @@ set_property PACKAGE_PIN R4 [get_ports sys_clk]
 set_property IOSTANDARD LVCMOS15 [get_ports ext_reset_b]
 set_property PACKAGE_PIN G4 [get_ports ext_reset_b]
 set_property PULLTYPE PULLUP [get_ports ext_reset_b]
-set_max_delay -from [get_ports ext_reset_b] -to * 4.000
-set_min_delay -from [get_ports ext_reset_b] -to * 0.000
+set_max_delay -from [get_ports ext_reset_b] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports ext_reset_b] -to [get_clocks *] 0.000
 
 # UART Serial Interface
 set_property IOSTANDARD LVCMOS33 [get_ports rs232_uart_*]
@@ -31,7 +31,9 @@ set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 0.000
 set_max_delay -from [get_clocks *] -to [get_ports spi_flash_*] 15.000
 set_min_delay -from [get_clocks *] -to [get_ports spi_flash_*] 0.000
 
-# I2C Outputs
+# I2C I/O
+set_max_delay -from [get_ports iic_main_*] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports iic_main_*] -to [get_clocks *] 0.000
 set_max_delay -from [get_clocks *] -to [get_ports iic_main*] 16.000
 set_min_delay -from [get_clocks *] -to [get_ports iic_main*] 0.000
 
