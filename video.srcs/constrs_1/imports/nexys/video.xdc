@@ -1,7 +1,6 @@
-# 100 MHz System Reference Oscillator
-# create_clock -period 10.000 -name sys_clk -waveform {0.000 5.000} [get_ports sys_clk]
-# set_property IOSTANDARD LVCMOS25 [get_ports sys_clk]
-set_property PACKAGE_PIN R4 [get_ports sys_clk]
+# 100 MHz System Clock Oscillator
+create_clock -period 10.000 -name sysclk -waveform {0.000 5.000} [get_ports sysclk]
+set_property -dict {PACKAGE_PIN R4 IOSTANDARD LVCMOS33} [get_ports sysclk]
 
 # Board Reset Switch
 set_property IOSTANDARD LVCMOS15 [get_ports ext_reset_b]
@@ -19,9 +18,23 @@ set_min_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 0.000
 set_max_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 0.000
 
-# LCD Driver Outputs
-set_max_delay -from [get_clocks *] -to [get_ports lcd_7bits_tri_o[*]] 11.000
-set_min_delay -from [get_clocks *] -to [get_ports lcd_7bits_tri_o[*]] 0.000
+# OLED Display
+# set_property -dict {PACKAGE_PIN W22 IOSTANDARD LVCMOS33} [get_ports oled_dc];    #IO_L7N_T1_D10_14 Sch=oled_dc
+# set_property -dict {PACKAGE_PIN U21 IOSTANDARD LVCMOS33} [get_ports oled_res];   #IO_L4N_T0_D05_14 Sch=oled_res
+# set_property -dict {PACKAGE_PIN W21 IOSTANDARD LVCMOS33} [get_ports oled_sclk];  #IO_L7P_T1_D09_14 Sch=oled_sclk
+# set_property -dict {PACKAGE_PIN Y22 IOSTANDARD LVCMOS33} [get_ports oled_sdin];  #IO_L9N_T1_DQS_D13_14 Sch=oled_sdin
+# set_property -dict {PACKAGE_PIN P20 IOSTANDARD LVCMOS33} [get_ports oled_vbat];  #IO_0_14 Sch=oled_vbat
+# set_property -dict {PACKAGE_PIN V22 IOSTANDARD LVCMOS33} [get_ports oled_vdd];   #IO_L3N_T0_DQS_EMCCLK_14 Sch=oled_vdd
+
+# LEDS
+# set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS25 } [get_ports { led[0] }]; #IO_L15P_T2_DQS_13 Sch=led[0]
+# set_property -dict { PACKAGE_PIN T15   IOSTANDARD LVCMOS25 } [get_ports { led[1] }]; #IO_L15N_T2_DQS_13 Sch=led[1]
+# set_property -dict { PACKAGE_PIN T16   IOSTANDARD LVCMOS25 } [get_ports { led[2] }]; #IO_L17P_T2_13 Sch=led[2]
+# set_property -dict { PACKAGE_PIN U16   IOSTANDARD LVCMOS25 } [get_ports { led[3] }]; #IO_L17N_T2_13 Sch=led[3]
+# set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS25 } [get_ports { led[4] }]; #IO_L14N_T2_SRCC_13 Sch=led[4]
+# set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS25 } [get_ports { led[5] }]; #IO_L16N_T2_13 Sch=led[5]
+# set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS25 } [get_ports { led[6] }]; #IO_L16P_T2_13 Sch=led[6]
+# set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS25 } [get_ports { led[7] }]; #IO_L5P_T0_13 Sch=led[7]
 
 # LED Outputs
 set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 11.000

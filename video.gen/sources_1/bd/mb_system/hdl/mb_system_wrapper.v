@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sat Feb 22 13:35:42 2025
+//Date        : Wed Feb 26 15:12:01 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system_wrapper.bd
 //Design      : mb_system_wrapper
@@ -39,7 +39,7 @@ module mb_system_wrapper
     spi_flash_io2_io,
     spi_flash_io3_io,
     spi_flash_ss_io,
-    sys_clk);
+    sysclk);
   output [14:0]DDR3_0_addr;
   output [2:0]DDR3_0_ba;
   output DDR3_0_cas_n;
@@ -68,7 +68,7 @@ module mb_system_wrapper
   inout spi_flash_io2_io;
   inout spi_flash_io3_io;
   inout [0:0]spi_flash_ss_io;
-  input sys_clk;
+  input sysclk;
 
   wire [14:0]DDR3_0_addr;
   wire [2:0]DDR3_0_ba;
@@ -246,7 +246,7 @@ module mb_system_wrapper
   wire [0:0]spi_flash_ss_io_0;
   wire [0:0]spi_flash_ss_o_0;
   wire spi_flash_ss_t;
-  wire sys_clk;
+  wire sysclk;
 
   IOBUF iic_main_scl_iobuf
        (.I(iic_main_scl_o),
@@ -463,7 +463,7 @@ module mb_system_wrapper
         .spi_flash_ss_i(spi_flash_ss_i_0),
         .spi_flash_ss_o(spi_flash_ss_o_0),
         .spi_flash_ss_t(spi_flash_ss_t),
-        .sys_clk(sys_clk));
+        .sysclk(sysclk));
   IOBUF spi_flash_io0_iobuf
        (.I(spi_flash_io0_o),
         .IO(spi_flash_io0_io),

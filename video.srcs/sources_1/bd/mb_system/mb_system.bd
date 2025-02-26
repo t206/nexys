@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xEC8F667355A5B8B2",
+      "boundary_crc": "0x95A85346B4151D4F",
       "device": "xc7a200tsbg484-1",
       "gen_directory": "../../../../video.gen/sources_1/bd/mb_system",
       "name": "mb_system",
@@ -377,7 +377,7 @@
           }
         }
       },
-      "sys_clk": {
+      "sysclk": {
         "type": "clk",
         "direction": "I",
         "parameters": {
@@ -2193,7 +2193,7 @@
       },
       "sys_clk_1": {
         "ports": [
-          "sys_clk",
+          "sysclk",
           "mig_7series_0/sys_clk_i"
         ]
       }
