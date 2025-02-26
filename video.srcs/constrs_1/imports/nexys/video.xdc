@@ -27,7 +27,9 @@ set_min_delay -from [get_clocks *] -to [get_ports lcd_7bits_tri_o[*]] 0.000
 set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 11.000
 set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 0.000
 
-# SPI Flash Outputs
+# SPI Flash I/O
+set_max_delay -from [get_ports spi_flash_*] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports spi_flash_*] -to [get_clocks *] 0.000
 set_max_delay -from [get_clocks *] -to [get_ports spi_flash_*] 15.000
 set_min_delay -from [get_clocks *] -to [get_ports spi_flash_*] 0.000
 
