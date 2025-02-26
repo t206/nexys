@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x95A85346B4151D4F",
+      "boundary_crc": "0xAC1727181166BFFB",
       "device": "xc7a200tsbg484-1",
       "gen_directory": "../../../../video.gen/sources_1/bd/mb_system",
       "name": "mb_system",
@@ -364,7 +364,7 @@
       }
     },
     "ports": {
-      "ext_reset_b": {
+      "cpu_resetn": {
         "type": "rst",
         "direction": "I",
         "parameters": {
@@ -2102,7 +2102,7 @@
       },
       "ext_reset_b_1": {
         "ports": [
-          "ext_reset_b",
+          "cpu_resetn",
           "mig_7series_0/sys_rst"
         ]
       },

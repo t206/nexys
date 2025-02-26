@@ -3,11 +3,11 @@ create_clock -period 10.000 -name sysclk -waveform {0.000 5.000} [get_ports sysc
 set_property -dict {PACKAGE_PIN R4 IOSTANDARD LVCMOS33} [get_ports sysclk]
 
 # Board Reset Switch
-set_property IOSTANDARD LVCMOS15 [get_ports ext_reset_b]
-set_property PACKAGE_PIN G4 [get_ports ext_reset_b]
-set_property PULLTYPE PULLUP [get_ports ext_reset_b]
-set_max_delay -from [get_ports ext_reset_b] -to [get_clocks *] 4.000
-set_min_delay -from [get_ports ext_reset_b] -to [get_clocks *] 0.000
+set_property IOSTANDARD LVCMOS15 [get_ports cpu_resetn]
+set_property PACKAGE_PIN G4 [get_ports cpu_resetn]
+set_property PULLTYPE PULLUP [get_ports cpu_resetn]
+set_max_delay -from [get_ports cpu_resetn] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports cpu_resetn] -to [get_clocks *] 0.000
 
 # UART Serial Interface
 set_property IOSTANDARD LVCMOS33 [get_ports rs232_uart_*]
@@ -71,8 +71,8 @@ set_min_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 0.000
 # set_max_delay -from [get_cells gps_onesec_meta_reg] -to [get_cells gps_onesec_sync_reg] 1.500
 
 # set_property ASYNC_REG true [get_cells reset_*_reg]
-# set_min_delay -from [get_ports ext_reset_b] -to [get_cells reset_*_meta_reg] 0.000
-# set_max_delay -from [get_ports ext_reset_b] -to [get_cells reset_*_meta_reg] 4.000
+# set_min_delay -from [get_ports cpu_resetn] -to [get_cells reset_*_meta_reg] 0.000
+# set_max_delay -from [get_ports cpu_resetn] -to [get_cells reset_*_meta_reg] 4.000
 
 # These signals don't need synchronizers since both sets of registers are stable during the crossing
 # set_max_delay -from [get_cells {frequency_out_0_reg[*]}] -to [get_cells {frequency_out_1_reg[*]}] 1.500 -datapath_only

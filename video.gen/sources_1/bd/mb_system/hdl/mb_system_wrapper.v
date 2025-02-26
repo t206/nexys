@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Wed Feb 26 15:12:01 2025
+//Date        : Wed Feb 26 17:23:46 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system_wrapper.bd
 //Design      : mb_system_wrapper
@@ -25,8 +25,8 @@ module mb_system_wrapper
     DDR3_0_ras_n,
     DDR3_0_reset_n,
     DDR3_0_we_n,
+    cpu_resetn,
     dip_switches_4bits_tri_i,
-    ext_reset_b,
     iic_main_scl_io,
     iic_main_sda_io,
     lcd_7bits_tri_o,
@@ -54,8 +54,8 @@ module mb_system_wrapper
   output DDR3_0_ras_n;
   output DDR3_0_reset_n;
   output DDR3_0_we_n;
+  input cpu_resetn;
   input [3:0]dip_switches_4bits_tri_i;
-  input ext_reset_b;
   inout iic_main_scl_io;
   inout iic_main_sda_io;
   output [6:0]lcd_7bits_tri_o;
@@ -84,8 +84,8 @@ module mb_system_wrapper
   wire DDR3_0_ras_n;
   wire DDR3_0_reset_n;
   wire DDR3_0_we_n;
+  wire cpu_resetn;
   wire [3:0]dip_switches_4bits_tri_i;
-  wire ext_reset_b;
   wire iic_main_scl_i;
   wire iic_main_scl_io;
   wire iic_main_scl_o;
@@ -433,8 +433,8 @@ module mb_system_wrapper
         .DDR3_0_ras_n(DDR3_0_ras_n),
         .DDR3_0_reset_n(DDR3_0_reset_n),
         .DDR3_0_we_n(DDR3_0_we_n),
+        .cpu_resetn(cpu_resetn),
         .dip_switches_4bits_tri_i(dip_switches_4bits_tri_i),
-        .ext_reset_b(ext_reset_b),
         .iic_main_scl_i(iic_main_scl_i),
         .iic_main_scl_o(iic_main_scl_o),
         .iic_main_scl_t(iic_main_scl_t),
