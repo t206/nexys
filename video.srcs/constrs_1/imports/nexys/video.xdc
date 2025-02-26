@@ -27,6 +27,14 @@ set_min_delay -from [get_clocks *] -to [get_ports lcd_7bits_tri_o[*]] 0.000
 set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 11.000
 set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 0.000
 
+# SPI Flash Outputs
+set_max_delay -from [get_clocks *] -to [get_ports spi_flash_*] 15.000
+set_min_delay -from [get_clocks *] -to [get_ports spi_flash_*] 0.000
+
+# I2C Outputs
+set_max_delay -from [get_clocks *] -to [get_ports iic_main*] 16.000
+set_min_delay -from [get_clocks *] -to [get_ports iic_main*] 0.000
+
 # DDR3 Interface
 set_max_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 13.000
 set_min_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 0.000
