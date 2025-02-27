@@ -3,7 +3,8 @@ set_property -dict {PACKAGE_PIN R4 IOSTANDARD LVCMOS33} [get_ports sysclk]
 create_clock -period 10.000 -name sysclk -waveform {0.000 5.000} [get_ports sysclk]
 
 # Board Reset Switch
-set_property -dict [PACKAGE_PIN G4 IOSTANDARD LVCMOS15 PULLTYPE PULLUP] [get_ports cpu_resetn]
+set_property -dict [PACKAGE_PIN G4 IOSTANDARD LVCMOS15] [get_ports cpu_resetn]
+set_property  PULLTYPE PULLUP [get_ports cpu_resetn]
 set_max_delay -from [get_ports cpu_resetn] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports cpu_resetn] -to [get_clocks *] 0.000
 
