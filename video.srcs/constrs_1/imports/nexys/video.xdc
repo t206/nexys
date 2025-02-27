@@ -1,15 +1,13 @@
 # 100 MHz System Clock Oscillator
-create_clock -period 10.000 -name sysclk -waveform {0.000 5.000} [get_ports sysclk]
 set_property -dict {PACKAGE_PIN R4 IOSTANDARD LVCMOS33} [get_ports sysclk]
+create_clock -period 10.000 -name sysclk -waveform {0.000 5.000} [get_ports sysclk]
 
 # Board Reset Switch
-set_property IOSTANDARD LVCMOS15 [get_ports cpu_resetn]
-set_property PACKAGE_PIN G4 [get_ports cpu_resetn]
-set_property PULLTYPE PULLUP [get_ports cpu_resetn]
+set_property -dict [PACKAGE_PIN G4 IOSTANDARD LVCMOS15 PULLTYPE PULLUP] [get_ports cpu_resetn]
 set_max_delay -from [get_ports cpu_resetn] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports cpu_resetn] -to [get_clocks *] 0.000
 
-# UART Serial Interface
+# UART Serial Interface (115200,N,8)
 set_property IOSTANDARD LVCMOS33 [get_ports rs232_uart_*]
 set_property PACKAGE_PIN AA19 [get_ports rs232_uart_rxd]
 set_property PACKAGE_PIN V18 [get_ports rs232_uart_txd]
