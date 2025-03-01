@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sat Mar  1 12:16:23 2025
+//Date        : Sat Mar  1 13:12:22 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system.bd
 //Design      : mb_system
@@ -1186,24 +1186,24 @@ module mb_system
     led_4bits_tri_i,
     led_4bits_tri_o,
     led_4bits_tri_t,
+    qspi_flash_io0_i,
+    qspi_flash_io0_o,
+    qspi_flash_io0_t,
+    qspi_flash_io1_i,
+    qspi_flash_io1_o,
+    qspi_flash_io1_t,
+    qspi_flash_io2_i,
+    qspi_flash_io2_o,
+    qspi_flash_io2_t,
+    qspi_flash_io3_i,
+    qspi_flash_io3_o,
+    qspi_flash_io3_t,
+    qspi_flash_ss_i,
+    qspi_flash_ss_o,
+    qspi_flash_ss_t,
     rotary_switch_tri_i,
     rs232_uart_rxd,
     rs232_uart_txd,
-    spi_flash_io0_i,
-    spi_flash_io0_o,
-    spi_flash_io0_t,
-    spi_flash_io1_i,
-    spi_flash_io1_o,
-    spi_flash_io1_t,
-    spi_flash_io2_i,
-    spi_flash_io2_o,
-    spi_flash_io2_t,
-    spi_flash_io3_i,
-    spi_flash_io3_o,
-    spi_flash_io3_t,
-    spi_flash_ss_i,
-    spi_flash_ss_o,
-    spi_flash_ss_t,
     sysclk);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 ADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR3_0, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) output [14:0]DDR3_0_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 BA" *) output [2:0]DDR3_0_ba;
@@ -1231,24 +1231,24 @@ module mb_system
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_I" *) (* X_INTERFACE_MODE = "Master" *) input [31:0]led_4bits_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_O" *) output [31:0]led_4bits_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_T" *) output [31:0]led_4bits_tri_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_I" *) (* X_INTERFACE_MODE = "Master" *) input qspi_flash_io0_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_O" *) output qspi_flash_io0_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_T" *) output qspi_flash_io0_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO1_I" *) input qspi_flash_io1_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO1_O" *) output qspi_flash_io1_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO1_T" *) output qspi_flash_io1_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO2_I" *) input qspi_flash_io2_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO2_O" *) output qspi_flash_io2_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO2_T" *) output qspi_flash_io2_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO3_I" *) input qspi_flash_io3_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO3_O" *) output qspi_flash_io3_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO3_T" *) output qspi_flash_io3_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash SS_I" *) input [0:0]qspi_flash_ss_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash SS_O" *) output [0:0]qspi_flash_ss_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash SS_T" *) output qspi_flash_ss_t;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 rotary_switch TRI_I" *) (* X_INTERFACE_MODE = "Master" *) input [2:0]rotary_switch_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 rs232_uart RxD" *) (* X_INTERFACE_MODE = "Master" *) input rs232_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 rs232_uart TxD" *) output rs232_uart_txd;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO0_I" *) (* X_INTERFACE_MODE = "Master" *) input spi_flash_io0_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO0_O" *) output spi_flash_io0_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO0_T" *) output spi_flash_io0_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO1_I" *) input spi_flash_io1_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO1_O" *) output spi_flash_io1_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO1_T" *) output spi_flash_io1_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO2_I" *) input spi_flash_io2_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO2_O" *) output spi_flash_io2_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO2_T" *) output spi_flash_io2_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO3_I" *) input spi_flash_io3_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO3_O" *) output spi_flash_io3_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO3_T" *) output spi_flash_io3_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_I" *) input [0:0]spi_flash_ss_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_O" *) output [0:0]spi_flash_ss_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_T" *) output spi_flash_ss_t;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYSCLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYSCLK, CLK_DOMAIN mb_system_sys_clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input sysclk;
 
   wire [14:0]DDR3_0_addr;
@@ -1505,26 +1505,26 @@ module mb_system
   wire mig_7series_0_ui_addn_clk_0;
   wire mig_7series_0_ui_clk;
   wire mig_7series_0_ui_clk_sync_rst;
+  wire qspi_flash_io0_i;
+  wire qspi_flash_io0_o;
+  wire qspi_flash_io0_t;
+  wire qspi_flash_io1_i;
+  wire qspi_flash_io1_o;
+  wire qspi_flash_io1_t;
+  wire qspi_flash_io2_i;
+  wire qspi_flash_io2_o;
+  wire qspi_flash_io2_t;
+  wire qspi_flash_io3_i;
+  wire qspi_flash_io3_o;
+  wire qspi_flash_io3_t;
+  wire [0:0]qspi_flash_ss_i;
+  wire [0:0]qspi_flash_ss_o;
+  wire qspi_flash_ss_t;
   wire [2:0]rotary_switch_tri_i;
   wire rs232_uart_rxd;
   wire rs232_uart_txd;
   wire rst_clk_wiz_1_100M_mb_reset;
   wire [0:0]rst_mig_7series_0_100M_peripheral_aresetn;
-  wire spi_flash_io0_i;
-  wire spi_flash_io0_o;
-  wire spi_flash_io0_t;
-  wire spi_flash_io1_i;
-  wire spi_flash_io1_o;
-  wire spi_flash_io1_t;
-  wire spi_flash_io2_i;
-  wire spi_flash_io2_o;
-  wire spi_flash_io2_t;
-  wire spi_flash_io3_i;
-  wire spi_flash_io3_o;
-  wire spi_flash_io3_t;
-  wire [0:0]spi_flash_ss_i;
-  wire [0:0]spi_flash_ss_o;
-  wire spi_flash_ss_t;
   wire sysclk;
 
   mb_system_axi_gpio_0_0 axi_gpio_0
@@ -1622,18 +1622,18 @@ module mb_system
         .sda_t(iic_main_sda_t));
   mb_system_axi_quad_spi_0_0 axi_quad_spi_0
        (.ext_spi_clk(mig_7series_0_ui_clk),
-        .io0_i(spi_flash_io0_i),
-        .io0_o(spi_flash_io0_o),
-        .io0_t(spi_flash_io0_t),
-        .io1_i(spi_flash_io1_i),
-        .io1_o(spi_flash_io1_o),
-        .io1_t(spi_flash_io1_t),
-        .io2_i(spi_flash_io2_i),
-        .io2_o(spi_flash_io2_o),
-        .io2_t(spi_flash_io2_t),
-        .io3_i(spi_flash_io3_i),
-        .io3_o(spi_flash_io3_o),
-        .io3_t(spi_flash_io3_t),
+        .io0_i(qspi_flash_io0_i),
+        .io0_o(qspi_flash_io0_o),
+        .io0_t(qspi_flash_io0_t),
+        .io1_i(qspi_flash_io1_i),
+        .io1_o(qspi_flash_io1_o),
+        .io1_t(qspi_flash_io1_t),
+        .io2_i(qspi_flash_io2_i),
+        .io2_o(qspi_flash_io2_o),
+        .io2_t(qspi_flash_io2_t),
+        .io3_i(qspi_flash_io3_i),
+        .io3_o(qspi_flash_io3_o),
+        .io3_t(qspi_flash_io3_t),
         .ip2intc_irpt(axi_quad_spi_0_ip2intc_irpt),
         .s_axi_aclk(mig_7series_0_ui_clk),
         .s_axi_araddr(microblaze_0_axi_periph_M01_AXI_ARADDR[6:0]),
@@ -1654,9 +1654,9 @@ module mb_system
         .s_axi_wready(microblaze_0_axi_periph_M01_AXI_WREADY),
         .s_axi_wstrb(microblaze_0_axi_periph_M01_AXI_WSTRB),
         .s_axi_wvalid(microblaze_0_axi_periph_M01_AXI_WVALID),
-        .ss_i(spi_flash_ss_i),
-        .ss_o(spi_flash_ss_o),
-        .ss_t(spi_flash_ss_t));
+        .ss_i(qspi_flash_ss_i),
+        .ss_o(qspi_flash_ss_o),
+        .ss_t(qspi_flash_ss_t));
   mb_system_axi_timer_0_0 axi_timer_0
        (.capturetrig0(1'b0),
         .capturetrig1(1'b0),

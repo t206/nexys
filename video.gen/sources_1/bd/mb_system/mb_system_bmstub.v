@@ -14,21 +14,21 @@ module mb_system (
   iic_main_sda_i,
   iic_main_sda_o,
   iic_main_sda_t,
-  spi_flash_io0_i,
-  spi_flash_io0_o,
-  spi_flash_io0_t,
-  spi_flash_io1_i,
-  spi_flash_io1_o,
-  spi_flash_io1_t,
-  spi_flash_io2_i,
-  spi_flash_io2_o,
-  spi_flash_io2_t,
-  spi_flash_io3_i,
-  spi_flash_io3_o,
-  spi_flash_io3_t,
-  spi_flash_ss_i,
-  spi_flash_ss_o,
-  spi_flash_ss_t,
+  qspi_flash_io0_i,
+  qspi_flash_io0_o,
+  qspi_flash_io0_t,
+  qspi_flash_io1_i,
+  qspi_flash_io1_o,
+  qspi_flash_io1_t,
+  qspi_flash_io2_i,
+  qspi_flash_io2_o,
+  qspi_flash_io2_t,
+  qspi_flash_io3_i,
+  qspi_flash_io3_o,
+  qspi_flash_io3_t,
+  qspi_flash_ss_i,
+  qspi_flash_ss_o,
+  qspi_flash_ss_t,
   dip_switches_4bits_tri_i,
   lcd_7bits_tri_o,
   led_4bits_tri_i,
@@ -71,37 +71,37 @@ module mb_system (
   output iic_main_sda_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 iic_main SDA_T" *)
   output iic_main_sda_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO0_I" *)
-  (* X_INTERFACE_MODE = "master spi_flash" *)
-  input spi_flash_io0_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO0_O" *)
-  output spi_flash_io0_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO0_T" *)
-  output spi_flash_io0_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO1_I" *)
-  input spi_flash_io1_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO1_O" *)
-  output spi_flash_io1_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO1_T" *)
-  output spi_flash_io1_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO2_I" *)
-  input spi_flash_io2_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO2_O" *)
-  output spi_flash_io2_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO2_T" *)
-  output spi_flash_io2_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO3_I" *)
-  input spi_flash_io3_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO3_O" *)
-  output spi_flash_io3_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash IO3_T" *)
-  output spi_flash_io3_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_I" *)
-  input [0:0]spi_flash_ss_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_O" *)
-  output [0:0]spi_flash_ss_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_T" *)
-  output spi_flash_ss_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_I" *)
+  (* X_INTERFACE_MODE = "master qspi_flash" *)
+  input qspi_flash_io0_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_O" *)
+  output qspi_flash_io0_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_T" *)
+  output qspi_flash_io0_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO1_I" *)
+  input qspi_flash_io1_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO1_O" *)
+  output qspi_flash_io1_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO1_T" *)
+  output qspi_flash_io1_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO2_I" *)
+  input qspi_flash_io2_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO2_O" *)
+  output qspi_flash_io2_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO2_T" *)
+  output qspi_flash_io2_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO3_I" *)
+  input qspi_flash_io3_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO3_O" *)
+  output qspi_flash_io3_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO3_T" *)
+  output qspi_flash_io3_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash SS_I" *)
+  input [0:0]qspi_flash_ss_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash SS_O" *)
+  output [0:0]qspi_flash_ss_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash SS_T" *)
+  output qspi_flash_ss_t;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 dip_switches_4bits TRI_I" *)
   (* X_INTERFACE_MODE = "master dip_switches_4bits" *)
   input [3:0]dip_switches_4bits_tri_i;

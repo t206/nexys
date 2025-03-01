@@ -7,7 +7,7 @@
 #  -string -flagsOSRD
 preplace port rs232_uart -pg 1 -lvl 6 -x 1900 -y 1300 -defaultsOSRD
 preplace port iic_main -pg 1 -lvl 6 -x 1900 -y 670 -defaultsOSRD
-preplace port spi_flash -pg 1 -lvl 6 -x 1900 -y 1140 -defaultsOSRD
+preplace port qspi_flash -pg 1 -lvl 6 -x 1900 -y 1140 -defaultsOSRD
 preplace port dip_switches_4bits -pg 1 -lvl 6 -x 1900 -y 540 -defaultsOSRD
 preplace port lcd_7bits -pg 1 -lvl 6 -x 1900 -y 570 -defaultsOSRD
 preplace port led_4bits -pg 1 -lvl 6 -x 1900 -y 830 -defaultsOSRD

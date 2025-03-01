@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sat Mar  1 12:16:23 2025
+//Date        : Sat Mar  1 13:12:22 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system_wrapper.bd
 //Design      : mb_system_wrapper
@@ -31,14 +31,14 @@ module mb_system_wrapper
     iic_main_sda_io,
     lcd_7bits_tri_o,
     led_4bits_tri_io,
+    qspi_flash_io0_io,
+    qspi_flash_io1_io,
+    qspi_flash_io2_io,
+    qspi_flash_io3_io,
+    qspi_flash_ss_io,
     rotary_switch_tri_i,
     rs232_uart_rxd,
     rs232_uart_txd,
-    spi_flash_io0_io,
-    spi_flash_io1_io,
-    spi_flash_io2_io,
-    spi_flash_io3_io,
-    spi_flash_ss_io,
     sysclk);
   output [14:0]DDR3_0_addr;
   output [2:0]DDR3_0_ba;
@@ -60,14 +60,14 @@ module mb_system_wrapper
   inout iic_main_sda_io;
   output [6:0]lcd_7bits_tri_o;
   inout [31:0]led_4bits_tri_io;
+  inout qspi_flash_io0_io;
+  inout qspi_flash_io1_io;
+  inout qspi_flash_io2_io;
+  inout qspi_flash_io3_io;
+  inout [0:0]qspi_flash_ss_io;
   input [2:0]rotary_switch_tri_i;
   input rs232_uart_rxd;
   output rs232_uart_txd;
-  inout spi_flash_io0_io;
-  inout spi_flash_io1_io;
-  inout spi_flash_io2_io;
-  inout spi_flash_io3_io;
-  inout [0:0]spi_flash_ss_io;
   input sysclk;
 
   wire [14:0]DDR3_0_addr;
@@ -223,29 +223,29 @@ module mb_system_wrapper
   wire [7:7]led_4bits_tri_t_7;
   wire [8:8]led_4bits_tri_t_8;
   wire [9:9]led_4bits_tri_t_9;
+  wire qspi_flash_io0_i;
+  wire qspi_flash_io0_io;
+  wire qspi_flash_io0_o;
+  wire qspi_flash_io0_t;
+  wire qspi_flash_io1_i;
+  wire qspi_flash_io1_io;
+  wire qspi_flash_io1_o;
+  wire qspi_flash_io1_t;
+  wire qspi_flash_io2_i;
+  wire qspi_flash_io2_io;
+  wire qspi_flash_io2_o;
+  wire qspi_flash_io2_t;
+  wire qspi_flash_io3_i;
+  wire qspi_flash_io3_io;
+  wire qspi_flash_io3_o;
+  wire qspi_flash_io3_t;
+  wire [0:0]qspi_flash_ss_i_0;
+  wire [0:0]qspi_flash_ss_io_0;
+  wire [0:0]qspi_flash_ss_o_0;
+  wire qspi_flash_ss_t;
   wire [2:0]rotary_switch_tri_i;
   wire rs232_uart_rxd;
   wire rs232_uart_txd;
-  wire spi_flash_io0_i;
-  wire spi_flash_io0_io;
-  wire spi_flash_io0_o;
-  wire spi_flash_io0_t;
-  wire spi_flash_io1_i;
-  wire spi_flash_io1_io;
-  wire spi_flash_io1_o;
-  wire spi_flash_io1_t;
-  wire spi_flash_io2_i;
-  wire spi_flash_io2_io;
-  wire spi_flash_io2_o;
-  wire spi_flash_io2_t;
-  wire spi_flash_io3_i;
-  wire spi_flash_io3_io;
-  wire spi_flash_io3_o;
-  wire spi_flash_io3_t;
-  wire [0:0]spi_flash_ss_i_0;
-  wire [0:0]spi_flash_ss_io_0;
-  wire [0:0]spi_flash_ss_o_0;
-  wire spi_flash_ss_t;
   wire sysclk;
 
   IOBUF iic_main_scl_iobuf
@@ -445,48 +445,48 @@ module mb_system_wrapper
         .led_4bits_tri_i({led_4bits_tri_i_31,led_4bits_tri_i_30,led_4bits_tri_i_29,led_4bits_tri_i_28,led_4bits_tri_i_27,led_4bits_tri_i_26,led_4bits_tri_i_25,led_4bits_tri_i_24,led_4bits_tri_i_23,led_4bits_tri_i_22,led_4bits_tri_i_21,led_4bits_tri_i_20,led_4bits_tri_i_19,led_4bits_tri_i_18,led_4bits_tri_i_17,led_4bits_tri_i_16,led_4bits_tri_i_15,led_4bits_tri_i_14,led_4bits_tri_i_13,led_4bits_tri_i_12,led_4bits_tri_i_11,led_4bits_tri_i_10,led_4bits_tri_i_9,led_4bits_tri_i_8,led_4bits_tri_i_7,led_4bits_tri_i_6,led_4bits_tri_i_5,led_4bits_tri_i_4,led_4bits_tri_i_3,led_4bits_tri_i_2,led_4bits_tri_i_1,led_4bits_tri_i_0}),
         .led_4bits_tri_o({led_4bits_tri_o_31,led_4bits_tri_o_30,led_4bits_tri_o_29,led_4bits_tri_o_28,led_4bits_tri_o_27,led_4bits_tri_o_26,led_4bits_tri_o_25,led_4bits_tri_o_24,led_4bits_tri_o_23,led_4bits_tri_o_22,led_4bits_tri_o_21,led_4bits_tri_o_20,led_4bits_tri_o_19,led_4bits_tri_o_18,led_4bits_tri_o_17,led_4bits_tri_o_16,led_4bits_tri_o_15,led_4bits_tri_o_14,led_4bits_tri_o_13,led_4bits_tri_o_12,led_4bits_tri_o_11,led_4bits_tri_o_10,led_4bits_tri_o_9,led_4bits_tri_o_8,led_4bits_tri_o_7,led_4bits_tri_o_6,led_4bits_tri_o_5,led_4bits_tri_o_4,led_4bits_tri_o_3,led_4bits_tri_o_2,led_4bits_tri_o_1,led_4bits_tri_o_0}),
         .led_4bits_tri_t({led_4bits_tri_t_31,led_4bits_tri_t_30,led_4bits_tri_t_29,led_4bits_tri_t_28,led_4bits_tri_t_27,led_4bits_tri_t_26,led_4bits_tri_t_25,led_4bits_tri_t_24,led_4bits_tri_t_23,led_4bits_tri_t_22,led_4bits_tri_t_21,led_4bits_tri_t_20,led_4bits_tri_t_19,led_4bits_tri_t_18,led_4bits_tri_t_17,led_4bits_tri_t_16,led_4bits_tri_t_15,led_4bits_tri_t_14,led_4bits_tri_t_13,led_4bits_tri_t_12,led_4bits_tri_t_11,led_4bits_tri_t_10,led_4bits_tri_t_9,led_4bits_tri_t_8,led_4bits_tri_t_7,led_4bits_tri_t_6,led_4bits_tri_t_5,led_4bits_tri_t_4,led_4bits_tri_t_3,led_4bits_tri_t_2,led_4bits_tri_t_1,led_4bits_tri_t_0}),
+        .qspi_flash_io0_i(qspi_flash_io0_i),
+        .qspi_flash_io0_o(qspi_flash_io0_o),
+        .qspi_flash_io0_t(qspi_flash_io0_t),
+        .qspi_flash_io1_i(qspi_flash_io1_i),
+        .qspi_flash_io1_o(qspi_flash_io1_o),
+        .qspi_flash_io1_t(qspi_flash_io1_t),
+        .qspi_flash_io2_i(qspi_flash_io2_i),
+        .qspi_flash_io2_o(qspi_flash_io2_o),
+        .qspi_flash_io2_t(qspi_flash_io2_t),
+        .qspi_flash_io3_i(qspi_flash_io3_i),
+        .qspi_flash_io3_o(qspi_flash_io3_o),
+        .qspi_flash_io3_t(qspi_flash_io3_t),
+        .qspi_flash_ss_i(qspi_flash_ss_i_0),
+        .qspi_flash_ss_o(qspi_flash_ss_o_0),
+        .qspi_flash_ss_t(qspi_flash_ss_t),
         .rotary_switch_tri_i(rotary_switch_tri_i),
         .rs232_uart_rxd(rs232_uart_rxd),
         .rs232_uart_txd(rs232_uart_txd),
-        .spi_flash_io0_i(spi_flash_io0_i),
-        .spi_flash_io0_o(spi_flash_io0_o),
-        .spi_flash_io0_t(spi_flash_io0_t),
-        .spi_flash_io1_i(spi_flash_io1_i),
-        .spi_flash_io1_o(spi_flash_io1_o),
-        .spi_flash_io1_t(spi_flash_io1_t),
-        .spi_flash_io2_i(spi_flash_io2_i),
-        .spi_flash_io2_o(spi_flash_io2_o),
-        .spi_flash_io2_t(spi_flash_io2_t),
-        .spi_flash_io3_i(spi_flash_io3_i),
-        .spi_flash_io3_o(spi_flash_io3_o),
-        .spi_flash_io3_t(spi_flash_io3_t),
-        .spi_flash_ss_i(spi_flash_ss_i_0),
-        .spi_flash_ss_o(spi_flash_ss_o_0),
-        .spi_flash_ss_t(spi_flash_ss_t),
         .sysclk(sysclk));
-  IOBUF spi_flash_io0_iobuf
-       (.I(spi_flash_io0_o),
-        .IO(spi_flash_io0_io),
-        .O(spi_flash_io0_i),
-        .T(spi_flash_io0_t));
-  IOBUF spi_flash_io1_iobuf
-       (.I(spi_flash_io1_o),
-        .IO(spi_flash_io1_io),
-        .O(spi_flash_io1_i),
-        .T(spi_flash_io1_t));
-  IOBUF spi_flash_io2_iobuf
-       (.I(spi_flash_io2_o),
-        .IO(spi_flash_io2_io),
-        .O(spi_flash_io2_i),
-        .T(spi_flash_io2_t));
-  IOBUF spi_flash_io3_iobuf
-       (.I(spi_flash_io3_o),
-        .IO(spi_flash_io3_io),
-        .O(spi_flash_io3_i),
-        .T(spi_flash_io3_t));
-  IOBUF spi_flash_ss_iobuf_0
-       (.I(spi_flash_ss_o_0),
-        .IO(spi_flash_ss_io[0]),
-        .O(spi_flash_ss_i_0),
-        .T(spi_flash_ss_t));
+  IOBUF qspi_flash_io0_iobuf
+       (.I(qspi_flash_io0_o),
+        .IO(qspi_flash_io0_io),
+        .O(qspi_flash_io0_i),
+        .T(qspi_flash_io0_t));
+  IOBUF qspi_flash_io1_iobuf
+       (.I(qspi_flash_io1_o),
+        .IO(qspi_flash_io1_io),
+        .O(qspi_flash_io1_i),
+        .T(qspi_flash_io1_t));
+  IOBUF qspi_flash_io2_iobuf
+       (.I(qspi_flash_io2_o),
+        .IO(qspi_flash_io2_io),
+        .O(qspi_flash_io2_i),
+        .T(qspi_flash_io2_t));
+  IOBUF qspi_flash_io3_iobuf
+       (.I(qspi_flash_io3_o),
+        .IO(qspi_flash_io3_io),
+        .O(qspi_flash_io3_i),
+        .T(qspi_flash_io3_t));
+  IOBUF qspi_flash_ss_iobuf_0
+       (.I(qspi_flash_ss_o_0),
+        .IO(qspi_flash_ss_io[0]),
+        .O(qspi_flash_ss_i_0),
+        .T(qspi_flash_ss_t));
 endmodule

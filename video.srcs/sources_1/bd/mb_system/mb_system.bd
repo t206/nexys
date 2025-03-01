@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xAC1727181166BFFB",
+      "boundary_crc": "0xD5BB7C53B30395F5",
       "device": "xc7a200tsbg484-1",
       "gen_directory": "../../../../video.gen/sources_1/bd/mb_system",
       "name": "mb_system",
@@ -94,73 +94,73 @@
           }
         }
       },
-      "spi_flash": {
+      "qspi_flash": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:spi:1.0",
         "vlnv": "xilinx.com:interface:spi_rtl:1.0",
         "port_maps": {
           "IO0_I": {
-            "physical_name": "spi_flash_io0_i",
+            "physical_name": "qspi_flash_io0_i",
             "direction": "I"
           },
           "IO0_O": {
-            "physical_name": "spi_flash_io0_o",
+            "physical_name": "qspi_flash_io0_o",
             "direction": "O"
           },
           "IO0_T": {
-            "physical_name": "spi_flash_io0_t",
+            "physical_name": "qspi_flash_io0_t",
             "direction": "O"
           },
           "IO1_I": {
-            "physical_name": "spi_flash_io1_i",
+            "physical_name": "qspi_flash_io1_i",
             "direction": "I"
           },
           "IO1_O": {
-            "physical_name": "spi_flash_io1_o",
+            "physical_name": "qspi_flash_io1_o",
             "direction": "O"
           },
           "IO1_T": {
-            "physical_name": "spi_flash_io1_t",
+            "physical_name": "qspi_flash_io1_t",
             "direction": "O"
           },
           "IO2_I": {
-            "physical_name": "spi_flash_io2_i",
+            "physical_name": "qspi_flash_io2_i",
             "direction": "I"
           },
           "IO2_O": {
-            "physical_name": "spi_flash_io2_o",
+            "physical_name": "qspi_flash_io2_o",
             "direction": "O"
           },
           "IO2_T": {
-            "physical_name": "spi_flash_io2_t",
+            "physical_name": "qspi_flash_io2_t",
             "direction": "O"
           },
           "IO3_I": {
-            "physical_name": "spi_flash_io3_i",
+            "physical_name": "qspi_flash_io3_i",
             "direction": "I"
           },
           "IO3_O": {
-            "physical_name": "spi_flash_io3_o",
+            "physical_name": "qspi_flash_io3_o",
             "direction": "O"
           },
           "IO3_T": {
-            "physical_name": "spi_flash_io3_t",
+            "physical_name": "qspi_flash_io3_t",
             "direction": "O"
           },
           "SS_I": {
-            "physical_name": "spi_flash_ss_i",
+            "physical_name": "qspi_flash_ss_i",
             "direction": "I",
             "left": "0",
             "right": "0"
           },
           "SS_O": {
-            "physical_name": "spi_flash_ss_o",
+            "physical_name": "qspi_flash_ss_o",
             "direction": "O",
             "left": "0",
             "right": "0"
           },
           "SS_T": {
-            "physical_name": "spi_flash_ss_t",
+            "physical_name": "qspi_flash_ss_t",
             "direction": "O"
           }
         }
@@ -1974,7 +1974,7 @@
       },
       "axi_quad_spi_0_SPI_0": {
         "interface_ports": [
-          "spi_flash",
+          "qspi_flash",
           "axi_quad_spi_0/SPI_0"
         ]
       },
