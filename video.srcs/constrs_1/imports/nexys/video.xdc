@@ -17,6 +17,17 @@ set_min_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 0.000
 set_max_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 0.000
 
+# QSPI Flash
+set_property -dict {PACKAGE_PIN T19 IOSTANDARD LVCMOS33} [get_ports qspi_flash_cs]
+set_property -dict {PACKAGE_PIN P22 IOSTANDARD LVCMOS33} [get_ports qspi_flash_dq[0]]
+set_property -dict {PACKAGE_PIN R22 IOSTANDARD LVCMOS33} [get_ports qspi_flash_dq[1]]
+set_property -dict {PACKAGE_PIN P21 IOSTANDARD LVCMOS33} [get_ports qspi_flash_dq[2]]
+set_property -dict {PACKAGE_PIN R21 IOSTANDARD LVCMOS33} [get_ports qspi_flash_dq[3]]
+set_max_delay -from [get_ports qspi_flash_*] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports qspi_flash_*] -to [get_clocks *] -5.100
+set_max_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 15.000
+set_min_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 0.000
+
 # OLED Display
 # set_property -dict {PACKAGE_PIN W22 IOSTANDARD LVCMOS33} [get_ports oled_dc];    #IO_L7N_T1_D10_14 Sch=oled_dc
 # set_property -dict {PACKAGE_PIN U21 IOSTANDARD LVCMOS33} [get_ports oled_res];   #IO_L4N_T0_D05_14 Sch=oled_res
@@ -38,12 +49,6 @@ set_min_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 0.000
 # LED Outputs
 set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 11.000
 set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 0.000
-
-# SPI Flash I/O
-set_max_delay -from [get_ports spi_flash_*] -to [get_clocks *] 4.000
-set_min_delay -from [get_ports spi_flash_*] -to [get_clocks *] -5.100
-set_max_delay -from [get_clocks *] -to [get_ports spi_flash_*] 15.000
-set_min_delay -from [get_clocks *] -to [get_ports spi_flash_*] 0.000
 
 # I2C I/O
 set_max_delay -from [get_ports iic_main_*] -to [get_clocks *] 4.000

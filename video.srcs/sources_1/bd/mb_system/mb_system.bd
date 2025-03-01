@@ -451,7 +451,7 @@
         "inst_hier_path": "axi_quad_spi_0",
         "parameters": {
           "C_SPI_MEMORY": {
-            "value": "2"
+            "value": "3"
           },
           "C_SPI_MODE": {
             "value": "2"
