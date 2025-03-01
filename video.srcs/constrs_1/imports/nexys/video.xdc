@@ -18,11 +18,11 @@ set_max_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 0.000
 
 # QSPI Flash
-set_property -dict {PACKAGE_PIN T19 IOSTANDARD LVCMOS33} [get_ports qspi_flash_cs]
-set_property -dict {PACKAGE_PIN P22 IOSTANDARD LVCMOS33} [get_ports qspi_flash_dq[0]]
-set_property -dict {PACKAGE_PIN R22 IOSTANDARD LVCMOS33} [get_ports qspi_flash_dq[1]]
-set_property -dict {PACKAGE_PIN P21 IOSTANDARD LVCMOS33} [get_ports qspi_flash_dq[2]]
-set_property -dict {PACKAGE_PIN R21 IOSTANDARD LVCMOS33} [get_ports qspi_flash_dq[3]]
+set_property -dict {PACKAGE_PIN T19 IOSTANDARD LVCMOS33} [get_ports qspi_flash_ss_io]
+set_property -dict {PACKAGE_PIN P22 IOSTANDARD LVCMOS33} [get_ports qspi_flash_io0_io]
+set_property -dict {PACKAGE_PIN R22 IOSTANDARD LVCMOS33} [get_ports qspi_flash_io1_io]
+set_property -dict {PACKAGE_PIN P21 IOSTANDARD LVCMOS33} [get_ports qspi_flash_io2_io]
+set_property -dict {PACKAGE_PIN R21 IOSTANDARD LVCMOS33} [get_ports qspi_flash_io3_io]
 set_max_delay -from [get_ports qspi_flash_*] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports qspi_flash_*] -to [get_clocks *] -5.100
 set_max_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 15.000
