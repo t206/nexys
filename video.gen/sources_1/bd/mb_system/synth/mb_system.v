@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sat Feb 22 13:35:42 2025
+//Date        : Sat Mar  1 12:16:23 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system.bd
 //Design      : mb_system
@@ -1174,8 +1174,8 @@ module mb_system
     DDR3_0_ras_n,
     DDR3_0_reset_n,
     DDR3_0_we_n,
+    cpu_resetn,
     dip_switches_4bits_tri_i,
-    ext_reset_b,
     iic_main_scl_i,
     iic_main_scl_o,
     iic_main_scl_t,
@@ -1204,7 +1204,7 @@ module mb_system
     spi_flash_ss_i,
     spi_flash_ss_o,
     spi_flash_ss_t,
-    sys_clk);
+    sysclk);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 ADDR" *) (* X_INTERFACE_MODE = "Master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR3_0, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) output [14:0]DDR3_0_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 BA" *) output [2:0]DDR3_0_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 CAS_N" *) output DDR3_0_cas_n;
@@ -1219,8 +1219,8 @@ module mb_system
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 RAS_N" *) output DDR3_0_ras_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 RESET_N" *) output DDR3_0_reset_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 WE_N" *) output DDR3_0_we_n;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.CPU_RESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.CPU_RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input cpu_resetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 dip_switches_4bits TRI_I" *) (* X_INTERFACE_MODE = "Master" *) input [3:0]dip_switches_4bits_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.EXT_RESET_B RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.EXT_RESET_B, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input ext_reset_b;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 iic_main SCL_I" *) (* X_INTERFACE_MODE = "Master" *) input iic_main_scl_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 iic_main SCL_O" *) output iic_main_scl_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 iic_main SCL_T" *) output iic_main_scl_t;
@@ -1249,7 +1249,7 @@ module mb_system
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_I" *) input [0:0]spi_flash_ss_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_O" *) output [0:0]spi_flash_ss_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_flash SS_T" *) output spi_flash_ss_t;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLK, CLK_DOMAIN mb_system_sys_clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input sys_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYSCLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYSCLK, CLK_DOMAIN mb_system_sys_clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input sysclk;
 
   wire [14:0]DDR3_0_addr;
   wire [2:0]DDR3_0_ba;
@@ -1269,8 +1269,8 @@ module mb_system
   wire axi_quad_spi_0_ip2intc_irpt;
   wire axi_timer_0_interrupt;
   wire axi_uartlite_0_interrupt;
+  wire cpu_resetn;
   wire [3:0]dip_switches_4bits_tri_i;
-  wire ext_reset_b;
   wire iic_main_scl_i;
   wire iic_main_scl_o;
   wire iic_main_scl_t;
@@ -1525,7 +1525,7 @@ module mb_system
   wire [0:0]spi_flash_ss_i;
   wire [0:0]spi_flash_ss_o;
   wire spi_flash_ss_t;
-  wire sys_clk;
+  wire sysclk;
 
   mb_system_axi_gpio_0_0 axi_gpio_0
        (.gpio2_io_o(lcd_7bits_tri_o),
@@ -2087,8 +2087,8 @@ module mb_system
         .s_axi_wready(microblaze_0_axi_periph_M08_AXI_WREADY),
         .s_axi_wstrb(microblaze_0_axi_periph_M08_AXI_WSTRB),
         .s_axi_wvalid(microblaze_0_axi_periph_M08_AXI_WVALID),
-        .sys_clk_i(sys_clk),
-        .sys_rst(ext_reset_b),
+        .sys_clk_i(sysclk),
+        .sys_rst(cpu_resetn),
         .ui_addn_clk_0(mig_7series_0_ui_addn_clk_0),
         .ui_clk(mig_7series_0_ui_clk),
         .ui_clk_sync_rst(mig_7series_0_ui_clk_sync_rst));

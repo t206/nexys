@@ -49,8 +49,8 @@ module mb_system (
   DDR3_0_cke,
   DDR3_0_dm,
   DDR3_0_odt,
-  ext_reset_b,
-  sys_clk
+  cpu_resetn,
+  sysclk
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 rs232_uart RxD" *)
@@ -148,14 +148,14 @@ module mb_system (
   output [1:0]DDR3_0_dm;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR3_0 ODT" *)
   output [0:0]DDR3_0_odt;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.EXT_RESET_B RST" *)
-  (* X_INTERFACE_MODE = "slave RST.EXT_RESET_B" *)
-  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.EXT_RESET_B, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
-  input ext_reset_b;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLK CLK" *)
-  (* X_INTERFACE_MODE = "slave CLK.SYS_CLK" *)
-  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLK, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN mb_system_sys_clock, INSERT_VIP 0" *)
-  input sys_clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.CPU_RESETN RST" *)
+  (* X_INTERFACE_MODE = "slave RST.CPU_RESETN" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.CPU_RESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+  input cpu_resetn;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYSCLK CLK" *)
+  (* X_INTERFACE_MODE = "slave CLK.SYSCLK" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYSCLK, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN mb_system_sys_clock, INSERT_VIP 0" *)
+  input sysclk;
 
   // stub module has no contents
 
