@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sat Mar  1 18:56:40 2025
+//Date        : Sat Mar  1 19:02:50 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system.bd
 //Design      : mb_system
@@ -1193,9 +1193,7 @@ module mb_system
     iic_main_sda_i,
     iic_main_sda_o,
     iic_main_sda_t,
-    led_4bits_tri_i,
     led_4bits_tri_o,
-    led_4bits_tri_t,
     qspi_flash_io0_i,
     qspi_flash_io0_o,
     qspi_flash_io0_t,
@@ -1236,9 +1234,7 @@ module mb_system
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 iic_main SDA_I" *) input iic_main_sda_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 iic_main SDA_O" *) output iic_main_sda_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 iic_main SDA_T" *) output iic_main_sda_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_I" *) (* X_INTERFACE_MODE = "Master" *) input [31:0]led_4bits_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_O" *) output [31:0]led_4bits_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_T" *) output [31:0]led_4bits_tri_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_O" *) (* X_INTERFACE_MODE = "Master" *) output [3:0]led_4bits_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_I" *) (* X_INTERFACE_MODE = "Master" *) input qspi_flash_io0_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_O" *) output qspi_flash_io0_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash IO0_T" *) output qspi_flash_io0_t;
@@ -1284,9 +1280,7 @@ module mb_system
   wire iic_main_sda_i;
   wire iic_main_sda_o;
   wire iic_main_sda_t;
-  wire [31:0]led_4bits_tri_i;
-  wire [31:0]led_4bits_tri_o;
-  wire [31:0]led_4bits_tri_t;
+  wire [3:0]led_4bits_tri_o;
   wire [31:0]microblaze_0_axi_dp_ARADDR;
   wire [2:0]microblaze_0_axi_dp_ARPROT;
   wire [0:0]microblaze_0_axi_dp_ARREADY;
@@ -1517,9 +1511,7 @@ module mb_system
   wire sysclk;
 
   mb_system_axi_gpio_1_0 axi_gpio_1
-       (.gpio_io_i(led_4bits_tri_i),
-        .gpio_io_o(led_4bits_tri_o),
-        .gpio_io_t(led_4bits_tri_t),
+       (.gpio_io_o(led_4bits_tri_o),
         .s_axi_aclk(mig_7series_0_ui_clk),
         .s_axi_araddr(microblaze_0_axi_periph_M06_AXI_ARADDR[8:0]),
         .s_axi_aresetn(rst_mig_7series_0_100M_peripheral_aresetn),

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x6EE684AA9DA01ECF",
+      "boundary_crc": "0x6AB95FCB3D6EF516",
       "device": "xc7a200tsbg484-1",
       "gen_directory": "../../../../video.gen/sources_1/bd/mb_system",
       "name": "mb_system",
@@ -169,22 +169,10 @@
         "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
         "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
         "port_maps": {
-          "TRI_I": {
-            "physical_name": "led_4bits_tri_i",
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
           "TRI_O": {
             "physical_name": "led_4bits_tri_o",
             "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "TRI_T": {
-            "physical_name": "led_4bits_tri_t",
-            "direction": "O",
-            "left": "31",
+            "left": "3",
             "right": "0"
           }
         }
@@ -1820,6 +1808,12 @@
         "xci_path": "ip\\mb_system_axi_gpio_1_0\\mb_system_axi_gpio_1_0.xci",
         "inst_hier_path": "axi_gpio_1",
         "parameters": {
+          "C_ALL_OUTPUTS": {
+            "value": "1"
+          },
+          "C_GPIO_WIDTH": {
+            "value": "4"
+          },
           "GPIO2_BOARD_INTERFACE": {
             "value": "Custom"
           },

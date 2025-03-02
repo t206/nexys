@@ -29,9 +29,7 @@ module mb_system (
   qspi_flash_ss_i,
   qspi_flash_ss_o,
   qspi_flash_ss_t,
-  led_4bits_tri_i,
   led_4bits_tri_o,
-  led_4bits_tri_t,
   rotary_switch_tri_i,
   DDR3_0_dq,
   DDR3_0_dqs_p,
@@ -100,13 +98,9 @@ module mb_system (
   output [0:0]qspi_flash_ss_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash SS_T" *)
   output qspi_flash_ss_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_I" *)
-  (* X_INTERFACE_MODE = "master led_4bits" *)
-  input [31:0]led_4bits_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_O" *)
-  output [31:0]led_4bits_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_T" *)
-  output [31:0]led_4bits_tri_t;
+  (* X_INTERFACE_MODE = "master led_4bits" *)
+  output [3:0]led_4bits_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 rotary_switch TRI_I" *)
   (* X_INTERFACE_MODE = "master rotary_switch" *)
   input [2:0]rotary_switch_tri_i;
