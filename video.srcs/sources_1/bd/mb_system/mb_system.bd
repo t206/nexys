@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xD5BB7C53B30395F5",
+      "boundary_crc": "0x6EE684AA9DA01ECF",
       "device": "xc7a200tsbg484-1",
       "gen_directory": "../../../../video.gen/sources_1/bd/mb_system",
       "name": "mb_system",
@@ -41,7 +41,6 @@
       "microblaze_0_axi_intc": "",
       "microblaze_0_xlconcat": "",
       "mdm_1": "",
-      "axi_gpio_0": "",
       "axi_gpio_1": "",
       "axi_gpio_2": "",
       "mig_7series_0": "",
@@ -162,32 +161,6 @@
           "SS_T": {
             "physical_name": "qspi_flash_ss_t",
             "direction": "O"
-          }
-        }
-      },
-      "dip_switches_4bits": {
-        "mode": "Master",
-        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
-        "port_maps": {
-          "TRI_I": {
-            "physical_name": "dip_switches_4bits_tri_i",
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "lcd_7bits": {
-        "mode": "Master",
-        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
-        "port_maps": {
-          "TRI_O": {
-            "physical_name": "lcd_7bits_tri_o",
-            "direction": "O",
-            "left": "6",
-            "right": "0"
           }
         }
       },
@@ -1840,39 +1813,6 @@
         "xci_path": "ip\\mb_system_mdm_1_0\\mb_system_mdm_1_0.xci",
         "inst_hier_path": "mdm_1"
       },
-      "axi_gpio_0": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "ip_revision": "35",
-        "xci_name": "mb_system_axi_gpio_0_0",
-        "xci_path": "ip\\mb_system_axi_gpio_0_0\\mb_system_axi_gpio_0_0.xci",
-        "inst_hier_path": "axi_gpio_0",
-        "parameters": {
-          "C_ALL_INPUTS": {
-            "value": "1"
-          },
-          "C_ALL_OUTPUTS_2": {
-            "value": "1"
-          },
-          "C_GPIO2_WIDTH": {
-            "value": "7"
-          },
-          "C_GPIO_WIDTH": {
-            "value": "4"
-          },
-          "C_IS_DUAL": {
-            "value": "1"
-          },
-          "GPIO2_BOARD_INTERFACE": {
-            "value": "Custom"
-          },
-          "GPIO_BOARD_INTERFACE": {
-            "value": "Custom"
-          },
-          "USE_BOARD_FLOW": {
-            "value": "true"
-          }
-        }
-      },
       "axi_gpio_1": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "35",
@@ -1942,18 +1882,6 @@
       }
     },
     "interface_nets": {
-      "axi_gpio_0_GPIO": {
-        "interface_ports": [
-          "dip_switches_4bits",
-          "axi_gpio_0/GPIO"
-        ]
-      },
-      "axi_gpio_0_GPIO2": {
-        "interface_ports": [
-          "lcd_7bits",
-          "axi_gpio_0/GPIO2"
-        ]
-      },
       "axi_gpio_1_GPIO": {
         "interface_ports": [
           "led_4bits",
@@ -2012,12 +1940,6 @@
         "interface_ports": [
           "microblaze_0_axi_periph/M04_AXI",
           "axi_timer_0/S_AXI"
-        ]
-      },
-      "microblaze_0_axi_periph_M05_AXI": {
-        "interface_ports": [
-          "microblaze_0_axi_periph/M05_AXI",
-          "axi_gpio_0/S_AXI"
         ]
       },
       "microblaze_0_axi_periph_M06_AXI": {
@@ -2127,7 +2049,6 @@
       "mig_7series_0_ui_clk": {
         "ports": [
           "mig_7series_0/ui_clk",
-          "axi_gpio_0/s_axi_aclk",
           "microblaze_0_axi_periph/M05_ACLK",
           "axi_gpio_1/s_axi_aclk",
           "microblaze_0_axi_periph/M06_ACLK",
@@ -2171,7 +2092,6 @@
           "rst_mig_7series_0_100M/peripheral_aresetn",
           "mig_7series_0/aresetn",
           "microblaze_0_axi_periph/M08_ARESETN",
-          "axi_gpio_0/s_axi_aresetn",
           "axi_gpio_1/s_axi_aresetn",
           "axi_gpio_2/s_axi_aresetn",
           "axi_iic_0/s_axi_aresetn",
@@ -2203,11 +2123,6 @@
         "address_spaces": {
           "Data": {
             "segments": {
-              "SEG_axi_gpio_0_Reg": {
-                "address_block": "/axi_gpio_0/S_AXI/Reg",
-                "offset": "0x40000000",
-                "range": "64K"
-              },
               "SEG_axi_gpio_1_Reg": {
                 "address_block": "/axi_gpio_1/S_AXI/Reg",
                 "offset": "0x40010000",

@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sat Mar  1 13:12:22 2025
+//Date        : Sat Mar  1 18:56:40 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system_wrapper.bd
 //Design      : mb_system_wrapper
@@ -26,10 +26,8 @@ module mb_system_wrapper
     DDR3_0_reset_n,
     DDR3_0_we_n,
     cpu_resetn,
-    dip_switches_4bits_tri_i,
     iic_main_scl_io,
     iic_main_sda_io,
-    lcd_7bits_tri_o,
     led_4bits_tri_io,
     qspi_flash_io0_io,
     qspi_flash_io1_io,
@@ -55,10 +53,8 @@ module mb_system_wrapper
   output DDR3_0_reset_n;
   output DDR3_0_we_n;
   input cpu_resetn;
-  input [3:0]dip_switches_4bits_tri_i;
   inout iic_main_scl_io;
   inout iic_main_sda_io;
-  output [6:0]lcd_7bits_tri_o;
   inout [31:0]led_4bits_tri_io;
   inout qspi_flash_io0_io;
   inout qspi_flash_io1_io;
@@ -85,7 +81,6 @@ module mb_system_wrapper
   wire DDR3_0_reset_n;
   wire DDR3_0_we_n;
   wire cpu_resetn;
-  wire [3:0]dip_switches_4bits_tri_i;
   wire iic_main_scl_i;
   wire iic_main_scl_io;
   wire iic_main_scl_o;
@@ -94,7 +89,6 @@ module mb_system_wrapper
   wire iic_main_sda_io;
   wire iic_main_sda_o;
   wire iic_main_sda_t;
-  wire [6:0]lcd_7bits_tri_o;
   wire [0:0]led_4bits_tri_i_0;
   wire [1:1]led_4bits_tri_i_1;
   wire [10:10]led_4bits_tri_i_10;
@@ -434,14 +428,12 @@ module mb_system_wrapper
         .DDR3_0_reset_n(DDR3_0_reset_n),
         .DDR3_0_we_n(DDR3_0_we_n),
         .cpu_resetn(cpu_resetn),
-        .dip_switches_4bits_tri_i(dip_switches_4bits_tri_i),
         .iic_main_scl_i(iic_main_scl_i),
         .iic_main_scl_o(iic_main_scl_o),
         .iic_main_scl_t(iic_main_scl_t),
         .iic_main_sda_i(iic_main_sda_i),
         .iic_main_sda_o(iic_main_sda_o),
         .iic_main_sda_t(iic_main_sda_t),
-        .lcd_7bits_tri_o(lcd_7bits_tri_o),
         .led_4bits_tri_i({led_4bits_tri_i_31,led_4bits_tri_i_30,led_4bits_tri_i_29,led_4bits_tri_i_28,led_4bits_tri_i_27,led_4bits_tri_i_26,led_4bits_tri_i_25,led_4bits_tri_i_24,led_4bits_tri_i_23,led_4bits_tri_i_22,led_4bits_tri_i_21,led_4bits_tri_i_20,led_4bits_tri_i_19,led_4bits_tri_i_18,led_4bits_tri_i_17,led_4bits_tri_i_16,led_4bits_tri_i_15,led_4bits_tri_i_14,led_4bits_tri_i_13,led_4bits_tri_i_12,led_4bits_tri_i_11,led_4bits_tri_i_10,led_4bits_tri_i_9,led_4bits_tri_i_8,led_4bits_tri_i_7,led_4bits_tri_i_6,led_4bits_tri_i_5,led_4bits_tri_i_4,led_4bits_tri_i_3,led_4bits_tri_i_2,led_4bits_tri_i_1,led_4bits_tri_i_0}),
         .led_4bits_tri_o({led_4bits_tri_o_31,led_4bits_tri_o_30,led_4bits_tri_o_29,led_4bits_tri_o_28,led_4bits_tri_o_27,led_4bits_tri_o_26,led_4bits_tri_o_25,led_4bits_tri_o_24,led_4bits_tri_o_23,led_4bits_tri_o_22,led_4bits_tri_o_21,led_4bits_tri_o_20,led_4bits_tri_o_19,led_4bits_tri_o_18,led_4bits_tri_o_17,led_4bits_tri_o_16,led_4bits_tri_o_15,led_4bits_tri_o_14,led_4bits_tri_o_13,led_4bits_tri_o_12,led_4bits_tri_o_11,led_4bits_tri_o_10,led_4bits_tri_o_9,led_4bits_tri_o_8,led_4bits_tri_o_7,led_4bits_tri_o_6,led_4bits_tri_o_5,led_4bits_tri_o_4,led_4bits_tri_o_3,led_4bits_tri_o_2,led_4bits_tri_o_1,led_4bits_tri_o_0}),
         .led_4bits_tri_t({led_4bits_tri_t_31,led_4bits_tri_t_30,led_4bits_tri_t_29,led_4bits_tri_t_28,led_4bits_tri_t_27,led_4bits_tri_t_26,led_4bits_tri_t_25,led_4bits_tri_t_24,led_4bits_tri_t_23,led_4bits_tri_t_22,led_4bits_tri_t_21,led_4bits_tri_t_20,led_4bits_tri_t_19,led_4bits_tri_t_18,led_4bits_tri_t_17,led_4bits_tri_t_16,led_4bits_tri_t_15,led_4bits_tri_t_14,led_4bits_tri_t_13,led_4bits_tri_t_12,led_4bits_tri_t_11,led_4bits_tri_t_10,led_4bits_tri_t_9,led_4bits_tri_t_8,led_4bits_tri_t_7,led_4bits_tri_t_6,led_4bits_tri_t_5,led_4bits_tri_t_4,led_4bits_tri_t_3,led_4bits_tri_t_2,led_4bits_tri_t_1,led_4bits_tri_t_0}),

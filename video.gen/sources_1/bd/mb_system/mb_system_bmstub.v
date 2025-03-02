@@ -29,8 +29,6 @@ module mb_system (
   qspi_flash_ss_i,
   qspi_flash_ss_o,
   qspi_flash_ss_t,
-  dip_switches_4bits_tri_i,
-  lcd_7bits_tri_o,
   led_4bits_tri_i,
   led_4bits_tri_o,
   led_4bits_tri_t,
@@ -102,12 +100,6 @@ module mb_system (
   output [0:0]qspi_flash_ss_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 qspi_flash SS_T" *)
   output qspi_flash_ss_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 dip_switches_4bits TRI_I" *)
-  (* X_INTERFACE_MODE = "master dip_switches_4bits" *)
-  input [3:0]dip_switches_4bits_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 lcd_7bits TRI_O" *)
-  (* X_INTERFACE_MODE = "master lcd_7bits" *)
-  output [6:0]lcd_7bits_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_4bits TRI_I" *)
   (* X_INTERFACE_MODE = "master led_4bits" *)
   input [31:0]led_4bits_tri_i;

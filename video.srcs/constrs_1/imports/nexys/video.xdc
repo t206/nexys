@@ -2,13 +2,13 @@
 set_property -dict {PACKAGE_PIN R4 IOSTANDARD LVCMOS33} [get_ports sysclk]
 create_clock -period 10.000 -name sysclk -waveform {0.000 5.000} [get_ports sysclk]
 
-# Board Reset Switch
+# CPU Reset Switch (active low)
 set_property -dict {PACKAGE_PIN G4 IOSTANDARD LVCMOS15} [get_ports cpu_resetn]
 set_property  PULLTYPE PULLUP [get_ports cpu_resetn]
 set_max_delay -from [get_ports cpu_resetn] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports cpu_resetn] -to [get_clocks *] 0.000
 
-# UART Serial Interface (115200,N,8)
+# UART Serial Interface (115200,N,8,1)
 set_property IOSTANDARD LVCMOS33 [get_ports rs232_uart_*]
 set_property PACKAGE_PIN AA19 [get_ports rs232_uart_rxd]
 set_property PACKAGE_PIN V18 [get_ports rs232_uart_txd]
@@ -29,12 +29,12 @@ set_max_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 15.000
 set_min_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 0.000
 
 # OLED Display SPI Interface
-set_property -dict {PACKAGE_PIN W22 IOSTANDARD LVCMOS33} [get_ports oled_dc]
-set_property -dict {PACKAGE_PIN U21 IOSTANDARD LVCMOS33} [get_ports oled_res]
-set_property -dict {PACKAGE_PIN W21 IOSTANDARD LVCMOS33} [get_ports oled_sclk]
-set_property -dict {PACKAGE_PIN Y22 IOSTANDARD LVCMOS33} [get_ports oled_sdin]
-set_property -dict {PACKAGE_PIN P20 IOSTANDARD LVCMOS33} [get_ports oled_vbat]
-set_property -dict {PACKAGE_PIN V22 IOSTANDARD LVCMOS33} [get_ports oled_vdd]
+# set_property -dict {PACKAGE_PIN W22 IOSTANDARD LVCMOS33} [get_ports oled_dc]
+# set_property -dict {PACKAGE_PIN U21 IOSTANDARD LVCMOS33} [get_ports oled_res]
+# set_property -dict {PACKAGE_PIN W21 IOSTANDARD LVCMOS33} [get_ports oled_sclk]
+# set_property -dict {PACKAGE_PIN Y22 IOSTANDARD LVCMOS33} [get_ports oled_sdin]
+# set_property -dict {PACKAGE_PIN P20 IOSTANDARD LVCMOS33} [get_ports oled_vbat]
+# set_property -dict {PACKAGE_PIN V22 IOSTANDARD LVCMOS33} [get_ports oled_vdd]
 
 # LEDS
 # set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS25 } [get_ports { led[0] }]; #IO_L15P_T2_DQS_13 Sch=led[0]
