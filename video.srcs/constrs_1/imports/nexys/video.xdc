@@ -36,17 +36,15 @@ set_min_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 0.000
 # set_property -dict {PACKAGE_PIN P20 IOSTANDARD LVCMOS33} [get_ports oled_vbat]
 # set_property -dict {PACKAGE_PIN V22 IOSTANDARD LVCMOS33} [get_ports oled_vdd]
 
-# LEDS
-# set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS25 } [get_ports { led[0] }]; #IO_L15P_T2_DQS_13 Sch=led[0]
-# set_property -dict { PACKAGE_PIN T15   IOSTANDARD LVCMOS25 } [get_ports { led[1] }]; #IO_L15N_T2_DQS_13 Sch=led[1]
-# set_property -dict { PACKAGE_PIN T16   IOSTANDARD LVCMOS25 } [get_ports { led[2] }]; #IO_L17P_T2_13 Sch=led[2]
-# set_property -dict { PACKAGE_PIN U16   IOSTANDARD LVCMOS25 } [get_ports { led[3] }]; #IO_L17N_T2_13 Sch=led[3]
-# set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS25 } [get_ports { led[4] }]; #IO_L14N_T2_SRCC_13 Sch=led[4]
-# set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS25 } [get_ports { led[5] }]; #IO_L16N_T2_13 Sch=led[5]
-# set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS25 } [get_ports { led[6] }]; #IO_L16P_T2_13 Sch=led[6]
-# set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS25 } [get_ports { led[7] }]; #IO_L5P_T0_13 Sch=led[7]
-
 # LED Outputs
+set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[0]}
+set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[1]]
+set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[2]]
+set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[3]]
+# set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[4]}
+# set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[5]]
+# set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[6]]
+# set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[7]]
 set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 11.000
 set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 0.000
 
