@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "mb_system_microblaze_0_axi_periph_imp_auto_pc_0",
-    "cell_name": "microblaze_0_axi_periph/m08_couplers/auto_pc",
+    "cell_name": "microblaze_0_axi_periph/m05_couplers/auto_pc",
     "component_reference": "xilinx.com:ip:axi_protocol_converter:2.1",
     "ip_revision": "33",
     "gen_directory": "../../../../../../video.gen/sources_1/bd/mb_system/ip/mb_system_microblaze_0_axi_periph_imp_auto_pc_0",

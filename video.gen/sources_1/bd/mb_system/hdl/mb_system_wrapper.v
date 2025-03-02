@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sat Mar  1 21:59:14 2025
+//Date        : Sun Mar  2 11:46:57 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system_wrapper.bd
 //Design      : mb_system_wrapper
@@ -25,10 +25,14 @@ module mb_system_wrapper
     DDR3_0_ras_n,
     DDR3_0_reset_n,
     DDR3_0_we_n,
+    clk_100,
+    clk_200,
     cpu_resetn,
+    ddr_cal_done,
     iic_main_scl_io,
     iic_main_sda_io,
     led_4bits_tri_o,
+    mmcm_locked,
     qspi_flash_io0_io,
     qspi_flash_io1_io,
     qspi_flash_io2_io,
@@ -51,10 +55,14 @@ module mb_system_wrapper
   output DDR3_0_ras_n;
   output DDR3_0_reset_n;
   output DDR3_0_we_n;
+  output clk_100;
+  output clk_200;
   input cpu_resetn;
+  output ddr_cal_done;
   inout iic_main_scl_io;
   inout iic_main_sda_io;
   output [3:0]led_4bits_tri_o;
+  output mmcm_locked;
   inout qspi_flash_io0_io;
   inout qspi_flash_io1_io;
   inout qspi_flash_io2_io;
@@ -78,7 +86,10 @@ module mb_system_wrapper
   wire DDR3_0_ras_n;
   wire DDR3_0_reset_n;
   wire DDR3_0_we_n;
+  wire clk_100;
+  wire clk_200;
   wire cpu_resetn;
+  wire ddr_cal_done;
   wire iic_main_scl_i;
   wire iic_main_scl_io;
   wire iic_main_scl_o;
@@ -88,6 +99,7 @@ module mb_system_wrapper
   wire iic_main_sda_o;
   wire iic_main_sda_t;
   wire [3:0]led_4bits_tri_o;
+  wire mmcm_locked;
   wire qspi_flash_io0_i;
   wire qspi_flash_io0_io;
   wire qspi_flash_io0_o;
@@ -137,7 +149,10 @@ module mb_system_wrapper
         .DDR3_0_ras_n(DDR3_0_ras_n),
         .DDR3_0_reset_n(DDR3_0_reset_n),
         .DDR3_0_we_n(DDR3_0_we_n),
+        .clk_100(clk_100),
+        .clk_200(clk_200),
         .cpu_resetn(cpu_resetn),
+        .ddr_cal_done(ddr_cal_done),
         .iic_main_scl_i(iic_main_scl_i),
         .iic_main_scl_o(iic_main_scl_o),
         .iic_main_scl_t(iic_main_scl_t),
@@ -145,6 +160,7 @@ module mb_system_wrapper
         .iic_main_sda_o(iic_main_sda_o),
         .iic_main_sda_t(iic_main_sda_t),
         .led_4bits_tri_o(led_4bits_tri_o),
+        .mmcm_locked(mmcm_locked),
         .qspi_flash_io0_i(qspi_flash_io0_i),
         .qspi_flash_io0_o(qspi_flash_io0_o),
         .qspi_flash_io0_t(qspi_flash_io0_t),

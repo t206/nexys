@@ -45,7 +45,11 @@ module mb_system (
   DDR3_0_dm,
   DDR3_0_odt,
   cpu_resetn,
-  sysclk
+  sysclk,
+  clk_100,
+  clk_200,
+  mmcm_locked,
+  ddr_cal_done
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 rs232_uart RxD" *)
@@ -138,6 +142,18 @@ module mb_system (
   (* X_INTERFACE_MODE = "slave CLK.SYSCLK" *)
   (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYSCLK, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN mb_system_sys_clock, INSERT_VIP 0" *)
   input sysclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_100 CLK" *)
+  (* X_INTERFACE_MODE = "master CLK.CLK_100" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_100, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN mb_system_mig_7series_0_0_ui_clk, INSERT_VIP 0" *)
+  output clk_100;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_200 CLK" *)
+  (* X_INTERFACE_MODE = "master CLK.CLK_200" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_200, FREQ_HZ 200000000, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN mb_system_mig_7series_0_0_ui_clk, INSERT_VIP 0" *)
+  output clk_200;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output mmcm_locked;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output ddr_cal_done;
 
   // stub module has no contents
 
