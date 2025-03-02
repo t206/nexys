@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sat Mar  1 19:02:50 2025
+//Date        : Sat Mar  1 21:59:14 2025
 //Host        : TONY95B7 running 64-bit major release  (build 9200)
 //Command     : generate_target mb_system_wrapper.bd
 //Design      : mb_system_wrapper
@@ -34,7 +34,6 @@ module mb_system_wrapper
     qspi_flash_io2_io,
     qspi_flash_io3_io,
     qspi_flash_ss_io,
-    rotary_switch_tri_i,
     rs232_uart_rxd,
     rs232_uart_txd,
     sysclk);
@@ -61,7 +60,6 @@ module mb_system_wrapper
   inout qspi_flash_io2_io;
   inout qspi_flash_io3_io;
   inout [0:0]qspi_flash_ss_io;
-  input [2:0]rotary_switch_tri_i;
   input rs232_uart_rxd;
   output rs232_uart_txd;
   input sysclk;
@@ -110,7 +108,6 @@ module mb_system_wrapper
   wire [0:0]qspi_flash_ss_io_0;
   wire [0:0]qspi_flash_ss_o_0;
   wire qspi_flash_ss_t;
-  wire [2:0]rotary_switch_tri_i;
   wire rs232_uart_rxd;
   wire rs232_uart_txd;
   wire sysclk;
@@ -163,7 +160,6 @@ module mb_system_wrapper
         .qspi_flash_ss_i(qspi_flash_ss_i_0),
         .qspi_flash_ss_o(qspi_flash_ss_o_0),
         .qspi_flash_ss_t(qspi_flash_ss_t),
-        .rotary_switch_tri_i(rotary_switch_tri_i),
         .rs232_uart_rxd(rs232_uart_rxd),
         .rs232_uart_txd(rs232_uart_txd),
         .sysclk(sysclk));

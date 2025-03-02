@@ -28,14 +28,6 @@ set_min_delay -from [get_ports qspi_flash_*] -to [get_clocks *] -5.100
 set_max_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 15.000
 set_min_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 0.000
 
-# OLED Display SPI Interface
-# set_property -dict {PACKAGE_PIN W22 IOSTANDARD LVCMOS33} [get_ports oled_dc]
-# set_property -dict {PACKAGE_PIN U21 IOSTANDARD LVCMOS33} [get_ports oled_res]
-# set_property -dict {PACKAGE_PIN W21 IOSTANDARD LVCMOS33} [get_ports oled_sclk]
-# set_property -dict {PACKAGE_PIN Y22 IOSTANDARD LVCMOS33} [get_ports oled_sdin]
-# set_property -dict {PACKAGE_PIN P20 IOSTANDARD LVCMOS33} [get_ports oled_vbat]
-# set_property -dict {PACKAGE_PIN V22 IOSTANDARD LVCMOS33} [get_ports oled_vdd]
-
 # LED Outputs
 set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[0]]
 set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[1]]
@@ -48,7 +40,6 @@ set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tr
 set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 11.000
 set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 0.000
 
-
 # I2C I/O
 set_max_delay -from [get_ports iic_main_*] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports iic_main_*] -to [get_clocks *] 0.000
@@ -58,6 +49,14 @@ set_min_delay -from [get_clocks *] -to [get_ports iic_main*] 0.000
 # DDR3 Interface
 set_max_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 13.000
 set_min_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 0.000
+
+# OLED Display SPI Interface
+# set_property -dict {PACKAGE_PIN W22 IOSTANDARD LVCMOS33} [get_ports oled_dc]
+# set_property -dict {PACKAGE_PIN U21 IOSTANDARD LVCMOS33} [get_ports oled_res]
+# set_property -dict {PACKAGE_PIN W21 IOSTANDARD LVCMOS33} [get_ports oled_sclk]
+# set_property -dict {PACKAGE_PIN Y22 IOSTANDARD LVCMOS33} [get_ports oled_sdin]
+# set_property -dict {PACKAGE_PIN P20 IOSTANDARD LVCMOS33} [get_ports oled_vbat]
+# set_property -dict {PACKAGE_PIN V22 IOSTANDARD LVCMOS33} [get_ports oled_vdd]
 
 # Userclk (frequency to be measured, 400 MHz maximum for Nexys Video Board)
 # Userclks are on connector JC1, pins 1(P) and 2(N)

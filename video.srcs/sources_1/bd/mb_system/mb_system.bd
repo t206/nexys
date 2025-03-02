@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x6AB95FCB3D6EF516",
+      "boundary_crc": "0x95A2655B8775DEF8",
       "device": "xc7a200tsbg484-1",
       "gen_directory": "../../../../video.gen/sources_1/bd/mb_system",
       "name": "mb_system",
@@ -42,7 +42,6 @@
       "microblaze_0_xlconcat": "",
       "mdm_1": "",
       "axi_gpio_1": "",
-      "axi_gpio_2": "",
       "mig_7series_0": "",
       "rst_mig_7series_0_100M": ""
     },
@@ -173,19 +172,6 @@
             "physical_name": "led_4bits_tri_o",
             "direction": "O",
             "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "rotary_switch": {
-        "mode": "Master",
-        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
-        "port_maps": {
-          "TRI_I": {
-            "physical_name": "rotary_switch_tri_i",
-            "direction": "I",
-            "left": "2",
             "right": "0"
           }
         }
@@ -1825,27 +1811,6 @@
           }
         }
       },
-      "axi_gpio_2": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "ip_revision": "35",
-        "xci_name": "mb_system_axi_gpio_2_0",
-        "xci_path": "ip\\mb_system_axi_gpio_2_0\\mb_system_axi_gpio_2_0.xci",
-        "inst_hier_path": "axi_gpio_2",
-        "parameters": {
-          "C_ALL_INPUTS": {
-            "value": "1"
-          },
-          "C_GPIO_WIDTH": {
-            "value": "3"
-          },
-          "GPIO_BOARD_INTERFACE": {
-            "value": "Custom"
-          },
-          "USE_BOARD_FLOW": {
-            "value": "true"
-          }
-        }
-      },
       "mig_7series_0": {
         "vlnv": "xilinx.com:ip:mig_7series:4.2",
         "ip_revision": "1",
@@ -1880,12 +1845,6 @@
         "interface_ports": [
           "led_4bits",
           "axi_gpio_1/GPIO"
-        ]
-      },
-      "axi_gpio_2_GPIO": {
-        "interface_ports": [
-          "rotary_switch",
-          "axi_gpio_2/GPIO"
         ]
       },
       "axi_iic_0_IIC": {
@@ -1940,12 +1899,6 @@
         "interface_ports": [
           "microblaze_0_axi_periph/M06_AXI",
           "axi_gpio_1/S_AXI"
-        ]
-      },
-      "microblaze_0_axi_periph_M07_AXI": {
-        "interface_ports": [
-          "microblaze_0_axi_periph/M07_AXI",
-          "axi_gpio_2/S_AXI"
         ]
       },
       "microblaze_0_axi_periph_M08_AXI": {
@@ -2046,7 +1999,6 @@
           "microblaze_0_axi_periph/M05_ACLK",
           "axi_gpio_1/s_axi_aclk",
           "microblaze_0_axi_periph/M06_ACLK",
-          "axi_gpio_2/s_axi_aclk",
           "microblaze_0_axi_periph/M07_ACLK",
           "axi_iic_0/s_axi_aclk",
           "microblaze_0_axi_periph/M02_ACLK",
@@ -2087,7 +2039,6 @@
           "mig_7series_0/aresetn",
           "microblaze_0_axi_periph/M08_ARESETN",
           "axi_gpio_1/s_axi_aresetn",
-          "axi_gpio_2/s_axi_aresetn",
           "axi_iic_0/s_axi_aresetn",
           "axi_quad_spi_0/s_axi_aresetn",
           "axi_timer_0/s_axi_aresetn",
@@ -2120,11 +2071,6 @@
               "SEG_axi_gpio_1_Reg": {
                 "address_block": "/axi_gpio_1/S_AXI/Reg",
                 "offset": "0x40010000",
-                "range": "64K"
-              },
-              "SEG_axi_gpio_2_Reg": {
-                "address_block": "/axi_gpio_2/S_AXI/Reg",
-                "offset": "0x40020000",
                 "range": "64K"
               },
               "SEG_axi_iic_0_Reg": {
