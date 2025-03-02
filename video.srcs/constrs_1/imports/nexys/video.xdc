@@ -47,8 +47,8 @@ set_min_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 0.000
 # set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS25 } [get_ports { led[7] }]; #IO_L5P_T0_13 Sch=led[7]
 
 # LED Outputs
-set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 11.000
-set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_io[*]] 0.000
+set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 11.000
+set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 0.000
 
 # I2C I/O
 set_max_delay -from [get_ports iic_main_*] -to [get_clocks *] 4.000
