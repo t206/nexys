@@ -41,6 +41,8 @@ set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 11.000
 set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 0.000
 
 # I2C I/O
+set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33} [get_ports iic_main_scl_io]
+set_property -dict {PACKAGE_PIN V5 IOSTANDARD LVCMOS33} [get_ports iic_main_sda_io]
 set_max_delay -from [get_ports iic_main_*] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports iic_main_*] -to [get_clocks *] 0.000
 set_max_delay -from [get_clocks *] -to [get_ports iic_main*] 16.000
