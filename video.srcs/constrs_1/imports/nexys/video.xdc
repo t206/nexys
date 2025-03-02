@@ -37,16 +37,17 @@ set_min_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 0.000
 # set_property -dict {PACKAGE_PIN V22 IOSTANDARD LVCMOS33} [get_ports oled_vdd]
 
 # LED Outputs
-set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[0]}
+set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[0]]
 set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[1]]
 set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[2]]
 set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[3]]
-# set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[4]}
-# set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[5]]
-# set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[6]]
-# set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[7]]
+# set_property -dict {PACKAGE_PIN V15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[4]]
+# set_property -dict {PACKAGE_PIN W16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[5]]
+# set_property -dict {PACKAGE_PIN W15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[6]]
+# set_property -dict {PACKAGE_PIN Y13 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[7]]
 set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 11.000
 set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 0.000
+
 
 # I2C I/O
 set_max_delay -from [get_ports iic_main_*] -to [get_clocks *] 4.000
