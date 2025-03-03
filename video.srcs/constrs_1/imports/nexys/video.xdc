@@ -9,48 +9,48 @@ set_max_delay -from [get_ports cpu_resetn] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports cpu_resetn] -to [get_clocks *] 0.000
 
 # UART Serial Interface (115200,N,8,1)
-set_property IOSTANDARD LVCMOS33 [get_ports rs232_uart_*]
-set_property PACKAGE_PIN AA19 [get_ports rs232_uart_rxd]
-set_property PACKAGE_PIN V18 [get_ports rs232_uart_txd]
-set_max_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 12.000
-set_min_delay -from [get_clocks *] -to [get_ports rs232_uart_txd] 0.000
-set_max_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 4.000
-set_min_delay -from [get_ports rs232_uart_rxd] -to [get_clocks *] 0.000
+set_property IOSTANDARD LVCMOS33 [get_ports uart_*]
+set_property PACKAGE_PIN AA19 [get_ports uart_rx_out]
+set_property PACKAGE_PIN V18 [get_ports uart_tx_in]
+set_max_delay -from [get_clocks *] -to [get_ports uart_tx_in] 12.000
+set_min_delay -from [get_clocks *] -to [get_ports uart_tx_in] 0.000
+set_max_delay -from [get_ports uart_rx_out] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports uart_rx_out] -to [get_clocks *] 0.000
 
 # QSPI Flash
-set_property -dict {PACKAGE_PIN T19 IOSTANDARD LVCMOS33} [get_ports qspi_flash_ss_io]
-set_property -dict {PACKAGE_PIN P22 IOSTANDARD LVCMOS33} [get_ports qspi_flash_io0_io]
-set_property -dict {PACKAGE_PIN R22 IOSTANDARD LVCMOS33} [get_ports qspi_flash_io1_io]
-set_property -dict {PACKAGE_PIN P21 IOSTANDARD LVCMOS33} [get_ports qspi_flash_io2_io]
-set_property -dict {PACKAGE_PIN R21 IOSTANDARD LVCMOS33} [get_ports qspi_flash_io3_io]
-set_max_delay -from [get_ports qspi_flash_*] -to [get_clocks *] 4.000
-set_min_delay -from [get_ports qspi_flash_*] -to [get_clocks *] -5.100
-set_max_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 15.000
-set_min_delay -from [get_clocks *] -to [get_ports qspi_flash_*] 0.000
+set_property -dict {PACKAGE_PIN T19 IOSTANDARD LVCMOS33} [get_ports qspi_csb]
+set_property -dict {PACKAGE_PIN P22 IOSTANDARD LVCMOS33} [get_ports qspi_dq[0]]
+set_property -dict {PACKAGE_PIN R22 IOSTANDARD LVCMOS33} [get_ports qspi_dq[1]]
+set_property -dict {PACKAGE_PIN P21 IOSTANDARD LVCMOS33} [get_ports qspi_dq[2]]
+set_property -dict {PACKAGE_PIN R21 IOSTANDARD LVCMOS33} [get_ports qspi_dq[3]]
+set_max_delay -from [get_ports qspi_*] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports qspi_*] -to [get_clocks *] -5.100
+set_max_delay -from [get_clocks *] -to [get_ports qspi_*] 15.000
+set_min_delay -from [get_clocks *] -to [get_ports qspi_*] 0.000
 
 # LED Outputs
-set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[0]]
-set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[1]]
-set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[2]]
-set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[3]]
-# set_property -dict {PACKAGE_PIN V15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[4]]
-# set_property -dict {PACKAGE_PIN W16 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[5]]
-# set_property -dict {PACKAGE_PIN W15 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[6]]
-# set_property -dict {PACKAGE_PIN Y13 IOSTANDARD LVCMOS25} [get_ports led_4bits_tri_o[7]]
-set_max_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 11.000
-set_min_delay -from [get_clocks *] -to [get_ports led_4bits_tri_o[*]] 0.000
+set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS25} [get_ports leds[0]]
+set_property -dict {PACKAGE_PIN T15 IOSTANDARD LVCMOS25} [get_ports leds[1]]
+set_property -dict {PACKAGE_PIN T16 IOSTANDARD LVCMOS25} [get_ports leds[2]]
+set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS25} [get_ports leds[3]]
+# set_property -dict {PACKAGE_PIN V15 IOSTANDARD LVCMOS25} [get_ports leds[4]]
+# set_property -dict {PACKAGE_PIN W16 IOSTANDARD LVCMOS25} [get_ports leds[5]]
+# set_property -dict {PACKAGE_PIN W15 IOSTANDARD LVCMOS25} [get_ports leds[6]]
+# set_property -dict {PACKAGE_PIN Y13 IOSTANDARD LVCMOS25} [get_ports leds[7]]
+set_max_delay -from [get_clocks *] -to [get_ports leds[*]] 11.000
+set_min_delay -from [get_clocks *] -to [get_ports leds[*]] 0.000
 
 # I2C I/O
-set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33} [get_ports iic_main_scl_io]
-set_property -dict {PACKAGE_PIN V5 IOSTANDARD LVCMOS33} [get_ports iic_main_sda_io]
-set_max_delay -from [get_ports iic_main_*] -to [get_clocks *] 4.000
-set_min_delay -from [get_ports iic_main_*] -to [get_clocks *] 0.000
-set_max_delay -from [get_clocks *] -to [get_ports iic_main*] 16.000
-set_min_delay -from [get_clocks *] -to [get_ports iic_main*] 0.000
+set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33} [get_ports scl]
+set_property -dict {PACKAGE_PIN V5 IOSTANDARD LVCMOS33} [get_ports sda]
+set_max_delay -from [get_ports {scl sda}] -to [get_clocks *] 4.000
+set_min_delay -from [get_ports {scl sda}] -to [get_clocks *] 0.000
+set_max_delay -from [get_clocks *] -to [get_ports {scl sda}] 16.000
+set_min_delay -from [get_clocks *] -to [get_ports {scl sda}] 0.000
 
 # DDR3 Interface
-set_max_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 13.000
-set_min_delay -from [get_clocks *] -to [get_ports DDR3_0_reset_n] 0.000
+set_max_delay -from [get_clocks *] -to [get_ports ddr3_resetb] 13.000
+set_min_delay -from [get_clocks *] -to [get_ports ddr3_resetb] 0.000
 
 # OLED Display SPI Interface
 # set_property -dict {PACKAGE_PIN W22 IOSTANDARD LVCMOS33} [get_ports oled_dc]
