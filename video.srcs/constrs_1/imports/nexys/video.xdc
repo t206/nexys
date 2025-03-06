@@ -37,13 +37,13 @@ set_property -dict {PACKAGE_PIN U16 IOSTANDARD LVCMOS25} [get_ports leds[3]]
 # set_property -dict {PACKAGE_PIN W16 IOSTANDARD LVCMOS25} [get_ports leds[5]]
 # set_property -dict {PACKAGE_PIN W15 IOSTANDARD LVCMOS25} [get_ports leds[6]]
 # set_property -dict {PACKAGE_PIN Y13 IOSTANDARD LVCMOS25} [get_ports leds[7]]
-set_max_delay -from [get_clocks *] -to [get_ports leds[*]] 11.000
+set_max_delay -from [get_clocks *] -to [get_ports leds[*]] 16.000
 set_min_delay -from [get_clocks *] -to [get_ports leds[*]] 0.000
 
 # I2C I/O
 set_property -dict {PACKAGE_PIN W5 IOSTANDARD LVCMOS33} [get_ports scl]
 set_property -dict {PACKAGE_PIN V5 IOSTANDARD LVCMOS33} [get_ports sda]
-set_max_delay -from [get_ports {scl sda}] -to [get_clocks *] 4.000
+set_max_delay -from [get_ports {scl sda}] -to [get_clocks *] 8.000
 set_min_delay -from [get_ports {scl sda}] -to [get_clocks *] 0.000
 set_max_delay -from [get_clocks *] -to [get_ports {scl sda}] 16.000
 set_min_delay -from [get_clocks *] -to [get_ports {scl sda}] 0.000
