@@ -1695,7 +1695,7 @@
             "value": "reset"
           },
           "XML_INPUT_FILE": {
-            "value": "mig_a.prj"
+            "value": "mig_b.prj"
           }
         }
       },
@@ -1864,19 +1864,14 @@
       "mig_7series_0_ui_addn_clk_0": {
         "ports": [
           "clk_200/ui_addn_clk_0",
-          "clk_200/clk_ref_i"
+          "clk_200/clk_ref_i",
+          "clk_200"
         ]
       },
       "mig_7series_0_ui_addn_clk_1": {
         "ports": [
           "clk_200/ui_addn_clk_1",
           "clk_100"
-        ]
-      },
-      "mig_7series_0_ui_addn_clk_2": {
-        "ports": [
-          "clk_200/ui_addn_clk_2",
-          "clk_200"
         ]
       },
       "mig_7series_0_ui_clk": {

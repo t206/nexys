@@ -170,7 +170,7 @@ module example_top #
    parameter MMCM_CLKOUT1_EN       = "TRUE",
                                      // "TRUE" - MMCM output clock (CLKOUT1) is enabled
                                      // "FALSE" - MMCM output clock (CLKOUT1) is disabled
-   parameter MMCM_CLKOUT2_EN       = "TRUE",
+   parameter MMCM_CLKOUT2_EN       = "FALSE",
                                      // "TRUE" - MMCM output clock (CLKOUT2) is enabled
                                      // "FALSE" - MMCM output clock (CLKOUT2) is disabled
    parameter MMCM_CLKOUT3_EN       = "FALSE",
@@ -183,7 +183,7 @@ module example_top #
                                      // VCO output divisor for MMCM output clock (CLKOUT0)
    parameter MMCM_CLKOUT1_DIVIDE   = 8,
                                      // VCO output divisor for MMCM output clock (CLKOUT1)
-   parameter MMCM_CLKOUT2_DIVIDE   = 4,
+   parameter MMCM_CLKOUT2_DIVIDE   = 1,
                                      // VCO output divisor for MMCM output clock (CLKOUT2)
    parameter MMCM_CLKOUT3_DIVIDE   = 1,
                                      // VCO output divisor for MMCM output clock (CLKOUT3)
