@@ -43,7 +43,7 @@ module video_tb;
 //	reg  userclk_p = 0;
 //	wire userclk_n;
 	reg  sys_clk = 0;
-//	reg  reset_b = 0;
+	reg  cpu_resetn = 1;
 //	reg  gps_onesec = 0;
 //	wire btnr_sw = 0;
 
@@ -52,7 +52,7 @@ module video_tb;
 video_top uut (
   // Inputs
   .sysclk          (sys_clk),    // 100 MHz board oscillator, single-ended
-  .cpu_resetn      (),           // CPU reset from PB switch, active low
+  .cpu_resetn      (cpu_resetn), // CPU reset from PB switch, active low
   .uart_rx_out     (),           // RS232 RX data
   // Outputs
   .leds            (),           // LEDs [3:0]

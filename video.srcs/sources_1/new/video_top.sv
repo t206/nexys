@@ -55,23 +55,20 @@ module video_top (
   logic  ddr_cal_done;           // DDR3 calibration complete
   logic  mmcm_locked;            // DDR3 MMCM locked
   logic  fabric_reset_meta = 1;
-  logic  fabric_reset_sync = 1;
   (* dont_touch = "yes" *) logic  fabric_reset = 1;       // Reset for all fabric logic  
 
 // Master reset for all fabric logic (active high)
-  always_ff @ (posedge clk_100, negedge mmcm_locked, negedge ddr_cal_done)
+  always_ff @ (posedge clk_100, negedge mmcm_locked)
     begin
-      if (!mmcm_locked | !ddr_cal_done)
+      if (!mmcm_locked)
         begin
           fabric_reset_meta <= 1;
-          fabric_reset_sync <= 1;
           fabric_reset <= 1;
         end
       else
         begin
           fabric_reset_meta <= 0;
-          fabric_reset_sync <= fabric_reset_meta;
-          fabric_reset <= fabric_reset_sync;
+          fabric_reset <= fabric_reset_meta;
         end
     end
 

@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="video_top_behav.wdb" id="1">
+      <db_ref path="video_tb_behav.wdb" id="1">
          <top_modules>
             <top_module name="comp_defs" />
             <top_module name="glbl" />
@@ -14,138 +14,50 @@
             <top_module name="mdm_funcs" />
             <top_module name="tc_types" />
             <top_module name="vcomponents" />
-            <top_module name="video_top" />
+            <top_module name="video_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,000.000001 ns"></ZoomEndTime>
-      <Cursor1Time time="999.999997 ns"></Cursor1Time>
+      <ZoomStartTime time="899.298161 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,020.140368 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="441"></NameColumnWidth>
+      <NameColumnWidth column_width="433"></NameColumnWidth>
       <ValueColumnWidth column_width="116"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
-   <wvobject fp_name="/video_top/sysclk" type="logic">
-      <obj_property name="ElementShortName">sysclk</obj_property>
-      <obj_property name="ObjectShortName">sysclk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/cpu_resetn" type="logic">
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/video_tb/uut/cpu_resetn" type="logic">
       <obj_property name="ElementShortName">cpu_resetn</obj_property>
       <obj_property name="ObjectShortName">cpu_resetn</obj_property>
    </wvobject>
-   <wvobject fp_name="/video_top/ddr_cal_done" type="logic">
+   <wvobject fp_name="/video_tb/uut/sysclk" type="logic">
+      <obj_property name="ElementShortName">sysclk</obj_property>
+      <obj_property name="ObjectShortName">sysclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/video_tb/uut/ddr_cal_done" type="logic">
       <obj_property name="ElementShortName">ddr_cal_done</obj_property>
       <obj_property name="ObjectShortName">ddr_cal_done</obj_property>
    </wvobject>
-   <wvobject fp_name="/video_top/mmcm_locked" type="logic">
+   <wvobject fp_name="/video_tb/uut/mmcm_locked" type="logic">
       <obj_property name="ElementShortName">mmcm_locked</obj_property>
       <obj_property name="ObjectShortName">mmcm_locked</obj_property>
    </wvobject>
-   <wvobject fp_name="/video_top/fabric_reset_meta" type="logic">
+   <wvobject fp_name="/video_tb/uut/fabric_reset_meta" type="logic">
       <obj_property name="ElementShortName">fabric_reset_meta</obj_property>
       <obj_property name="ObjectShortName">fabric_reset_meta</obj_property>
    </wvobject>
-   <wvobject fp_name="/video_top/fabric_reset_sync" type="logic">
-      <obj_property name="ElementShortName">fabric_reset_sync</obj_property>
-      <obj_property name="ObjectShortName">fabric_reset_sync</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/fabric_reset" type="logic">
+   <wvobject fp_name="/video_tb/uut/fabric_reset" type="logic">
       <obj_property name="ElementShortName">fabric_reset</obj_property>
       <obj_property name="ObjectShortName">fabric_reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/video_top/clk_100" type="logic">
-      <obj_property name="ElementShortName">clk_100</obj_property>
-      <obj_property name="ObjectShortName">clk_100</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/clk_200" type="logic">
+   <wvobject fp_name="/video_tb/uut/clk_200" type="logic">
       <obj_property name="ElementShortName">clk_200</obj_property>
       <obj_property name="ObjectShortName">clk_200</obj_property>
    </wvobject>
-   <wvobject fp_name="/video_top/uart_rx_out" type="logic">
-      <obj_property name="ElementShortName">uart_rx_out</obj_property>
-      <obj_property name="ObjectShortName">uart_rx_out</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/uart_tx_in" type="logic">
-      <obj_property name="ElementShortName">uart_tx_in</obj_property>
-      <obj_property name="ObjectShortName">uart_tx_in</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/leds" type="array">
-      <obj_property name="ElementShortName">leds[3:0]</obj_property>
-      <obj_property name="ObjectShortName">leds[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_resetb" type="logic">
-      <obj_property name="ElementShortName">ddr3_resetb</obj_property>
-      <obj_property name="ObjectShortName">ddr3_resetb</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_addr" type="array">
-      <obj_property name="ElementShortName">ddr3_addr[14:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_addr[14:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_ba" type="array">
-      <obj_property name="ElementShortName">ddr3_ba[2:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_ba[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_casb" type="logic">
-      <obj_property name="ElementShortName">ddr3_casb</obj_property>
-      <obj_property name="ObjectShortName">ddr3_casb</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_ck_n" type="logic">
-      <obj_property name="ElementShortName">ddr3_ck_n</obj_property>
-      <obj_property name="ObjectShortName">ddr3_ck_n</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_ck_p" type="logic">
-      <obj_property name="ElementShortName">ddr3_ck_p</obj_property>
-      <obj_property name="ObjectShortName">ddr3_ck_p</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_cke" type="logic">
-      <obj_property name="ElementShortName">ddr3_cke</obj_property>
-      <obj_property name="ObjectShortName">ddr3_cke</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_dm" type="array">
-      <obj_property name="ElementShortName">ddr3_dm[1:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_dm[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_odt" type="logic">
-      <obj_property name="ElementShortName">ddr3_odt</obj_property>
-      <obj_property name="ObjectShortName">ddr3_odt</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_rasb" type="logic">
-      <obj_property name="ElementShortName">ddr3_rasb</obj_property>
-      <obj_property name="ObjectShortName">ddr3_rasb</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_web" type="logic">
-      <obj_property name="ElementShortName">ddr3_web</obj_property>
-      <obj_property name="ObjectShortName">ddr3_web</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/scl" type="logic">
-      <obj_property name="ElementShortName">scl</obj_property>
-      <obj_property name="ObjectShortName">scl</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/sda" type="logic">
-      <obj_property name="ElementShortName">sda</obj_property>
-      <obj_property name="ObjectShortName">sda</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/qspi_dq" type="array">
-      <obj_property name="ElementShortName">qspi_dq[3:0]</obj_property>
-      <obj_property name="ObjectShortName">qspi_dq[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/qspi_csb" type="logic">
-      <obj_property name="ElementShortName">qspi_csb</obj_property>
-      <obj_property name="ObjectShortName">qspi_csb</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_dq" type="array">
-      <obj_property name="ElementShortName">ddr3_dq[15:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_dq[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_dqs_n" type="array">
-      <obj_property name="ElementShortName">ddr3_dqs_n[1:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_dqs_n[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/video_top/ddr3_dqs_p" type="array">
-      <obj_property name="ElementShortName">ddr3_dqs_p[1:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_dqs_p[1:0]</obj_property>
+   <wvobject fp_name="/video_tb/uut/clk_100" type="logic">
+      <obj_property name="ElementShortName">clk_100</obj_property>
+      <obj_property name="ObjectShortName">clk_100</obj_property>
    </wvobject>
 </wave_config>
