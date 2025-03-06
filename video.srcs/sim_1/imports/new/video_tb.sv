@@ -22,12 +22,12 @@
 
 module video_tb;
 
-//	// Outputs
+//  Outputs
 //	wire [31:0] count_per_sec;
 	
-//	// Parameters
-//    parameter SYSCLK_PERIOD = 10000;                     // ps
-//    parameter HALF_SYSCLK_PERIOD = SYSCLK_PERIOD / 2;    // ps
+// Parameters
+    parameter SYSCLK_PERIOD = 10000;                     // ps
+    parameter HALF_SYSCLK_PERIOD = SYSCLK_PERIOD / 2;    // ps
 //	parameter FIVE_HUNDRED_US  = 32'd500000000;          // ps
 //	parameter ONE_MILLISECOND  = 32'd1000000000;         // ps
 //	parameter TEN_MILLISECONDS = 40'd10000000000;        // ps
@@ -38,11 +38,11 @@ module video_tb;
 //	parameter HALF_USERCLK_PERIOD = USERCLK_PERIOD / 2;  // ps
 //	parameter USE_SIM_LED_DELAY = 0;
 	
-//	// Internal Signals
+//  Internal Signals
 	
 //	reg  userclk_p = 0;
 //	wire userclk_n;
-//	reg  sys_clk = 0;
+	reg  sys_clk = 0;
 //	reg  reset_b = 0;
 //	reg  gps_onesec = 0;
 //	wire btnr_sw = 0;
@@ -51,31 +51,31 @@ module video_tb;
 
 video_top uut (
   // Inputs
-  input  logic sysclk,           // 100 MHz board oscillator, single-ended
-  input  logic cpu_resetn,       // CPU reset from PB switch, active low
-  input  logic uart_rx_out,      // RS232 RX data
+  .sysclk          (sys_clk),    // 100 MHz board oscillator, single-ended
+  .cpu_resetn      (),           // CPU reset from PB switch, active low
+  .uart_rx_out     (),           // RS232 RX data
   // Outputs
-  output logic [3:0] leds,       // LEDs 0 thru 3
-  output logic uart_tx_in,       // RS232 TX data
-  output logic ddr3_resetb,      // DDR3 reset to memory, active low
-  output logic [14:0] ddr3_addr, // DDR3 address bus
-  output logic [2:0] ddr3_ba,
-  output logic ddr3_casb,        // DDR3 column address strobe, active low
-  output logic ddr3_ck_n,        // DDR3 differential clock (N)     
-  output logic ddr3_ck_p,        // DDR3 differential clock (P)
-  output logic ddr3_cke,         // DDR3 clock enable
-  output logic [1:0] ddr3_dm,
-  output logic ddr3_odt,
-  output logic ddr3_rasb,        // DDR3 row address strobe, active low
-  output logic ddr3_web,         // DDR3 write enable, active low
+  .leds            (),           // LEDs [3:0]
+  .uart_tx_in      (),           // RS232 TX data
+  .ddr3_resetb     (),           // DDR3 reset to memory, active low
+  .ddr3_addr       (),           // DDR3 address bus {14:0]
+  .ddr3_ba         (),           // [2:0]
+  .ddr3_casb       (),           // DDR3 column address strobe, active low
+  .ddr3_ck_n       (),           // DDR3 differential clock (N)     
+  .ddr3_ck_p       (),           // DDR3 differential clock (P)
+  .ddr3_cke        (),           // DDR3 clock enable
+  .ddr3_dm         (),           // [1:0]
+  .ddr3_odt        (),
+  .ddr3_rasb       (),           // DDR3 row address strobe, active low
+  .ddr3_web        (),           // DDR3 write enable, active low
   // Bidirectionals
-  inout  logic scl,              // I2C SCL
-  inout  logic sda,              // I2C SDA
-  inout  logic [3:0] qspi_dq,    // QSPI bidirectional data lines
-  inout  logic qspi_csb,         // QSPI chip select, active low
-  inout  logic [15:0] ddr3_dq,   // DDR3 data
-  inout  logic [1:0] ddr3_dqs_n,
-  inout  logic [1:0] ddr3_dqs_p
+  .scl             (),           // I2C SCL
+  .sda             (),           // I2C SDA
+  .qspi_dq         (),           // QSPI bidirectional data lines [3:0]
+  .qspi_csb        (),           // QSPI chip select, active low
+  .ddr3_dq         (),           // DDR3 data [15:0]
+  .ddr3_dqs_n      (),           // {1:0]
+  .ddr3_dqs_p      ()            // [1:0]
 );
 //	freq_counter #(USE_SIM_LED_DELAY) uut (
 //	  .userclk_p   (userclk_p),
@@ -87,8 +87,8 @@ video_top uut (
 //	  .gps_led()
 //	);
 
-//	initial
-//	  begin
+	initial
+	  begin
 //		#175129;
 //		reset_b = 1;
 //		@(negedge freq_counter_tb.uut.reset_refclk_sync);
@@ -116,7 +116,7 @@ video_top uut (
 //		gps_onesec = 1;
 //		#GPS_PULSE_WIDTH;
 //		gps_onesec = 0;
-//	  end
+	  end
 
 //   always
 //	  begin
@@ -126,9 +126,9 @@ video_top uut (
 	
 //	assign userclk_n = ~userclk_p;
 
-//   always
-//	  begin
-//	    #HALF_SYSCLK_PERIOD sys_clk = ~sys_clk;
-//	  end
+   always
+	  begin
+	    #HALF_SYSCLK_PERIOD sys_clk = ~sys_clk;
+	  end
 	
 endmodule
