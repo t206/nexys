@@ -344,7 +344,7 @@
                 "MI": "M_AXI_DP",
                 "MS": "SEG_clk_200_memaddr",
                 "MV": "xilinx.com:ip:microblaze:11.0",
-                "SX": "/clk_200",
+                "SX": "/ddr_controller_0",
                 "SI": "S_AXI",
                 "MM": "memmap",
                 "SS": "memaddr",

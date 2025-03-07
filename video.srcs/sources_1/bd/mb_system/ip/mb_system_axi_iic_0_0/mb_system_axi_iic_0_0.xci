@@ -4,7 +4,7 @@
     "xci_name": "mb_system_axi_iic_0_0",
     "cell_name": "axi_iic_0",
     "component_reference": "xilinx.com:ip:axi_iic:2.1",
-    "ip_revision": "9",
+    "ip_revision": "10",
     "gen_directory": "../../../../../../video.gen/sources_1/bd/mb_system/ip/mb_system_axi_iic_0_0",
     "parameters": {
       "component_parameters": {
@@ -55,12 +55,12 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "9" } ],
+        "IPREVISION": [ { "value": "10" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../video.gen/sources_1/bd/mb_system/ip/mb_system_axi_iic_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
-        "SWVERSION": [ { "value": "2024.2" } ],
+        "SWVERSION": [ { "value": "2024.2.1" } ],
         "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
       }
     },

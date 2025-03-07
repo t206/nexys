@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "mb_system_mig_7series_0_0",
-    "cell_name": "clk_200",
+    "cell_name": "ddr_controller_0",
     "component_reference": "xilinx.com:ip:mig_7series:4.2",
     "ip_revision": "1",
     "gen_directory": "../../../../../../video.gen/sources_1/bd/mb_system/ip/mb_system_mig_7series_0_0",

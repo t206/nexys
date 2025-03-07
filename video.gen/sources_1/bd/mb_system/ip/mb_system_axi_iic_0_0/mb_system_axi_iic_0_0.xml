@@ -2337,7 +2337,7 @@ interrupt is set.
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>AXI IIC</xilinx:displayName>
-      <xilinx:coreRevision>9</xilinx:coreRevision>
+      <xilinx:coreRevision>10</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.IIC.BOARD.ASSOCIATED_PARAM" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INTERRUPT.PortWidth" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
@@ -2386,10 +2386,10 @@ interrupt is set.
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2024.2.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="5da9c974"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="00000000"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="62e74476"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9c913b22"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="5a53dfbd"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="de11161a"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="81194d18"/>
