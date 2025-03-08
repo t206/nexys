@@ -51,7 +51,7 @@ module video_top (
 
 // Internal Signals
   logic  clk_100;                // 100 MHz fabric clock
-  logic  clk_200;                // 200 MHz fabric clock
+  (* dont_touch = "yes" *) logic  clk_200;                // 200 MHz fabric clock
   logic  ddr_cal_done;           // DDR3 calibration complete
   logic  mmcm_locked;            // DDR3 MMCM locked
   logic  fabric_reset_meta = 1;
