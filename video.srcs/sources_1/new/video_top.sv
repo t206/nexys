@@ -76,7 +76,7 @@ module video_top (
 // Temp code to check 100/200 MHz clock alignment
   always_ff @ (posedge clk_200)
     begin
-      if (!fabric_reset)
+      if (fabric_reset)
         tempsig <= 0;
       else
         tempsig <= 1;
