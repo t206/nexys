@@ -12,7 +12,7 @@ set_min_delay -from [get_ports cpu_resetn] -to [get_clocks *] 0.000
 set_property IOSTANDARD LVCMOS33 [get_ports uart_*]
 set_property PACKAGE_PIN AA19 [get_ports uart_rx_out]
 set_property PACKAGE_PIN V18 [get_ports uart_tx_in]
-set_max_delay -from [get_clocks *] -to [get_ports uart_tx_in] 13.000
+set_max_delay -from [get_clocks *] -to [get_ports uart_tx_in] 14.000
 set_min_delay -from [get_clocks *] -to [get_ports uart_tx_in] 0.000
 set_max_delay -from [get_ports uart_rx_out] -to [get_clocks *] 4.000
 set_min_delay -from [get_ports uart_rx_out] -to [get_clocks *] 0.000
