@@ -51,11 +51,12 @@ module video_top (
 
 // Internal Signals
   logic  clk_100;                // 100 MHz fabric clock
-  (* dont_touch = "yes" *) logic  clk_200;                // 200 MHz fabric clock
+  logic  clk_200;                // 200 MHz fabric clock
   logic  ddr_cal_done;           // DDR3 calibration complete
   logic  mmcm_locked;            // DDR3 MMCM locked
   logic  fabric_reset_meta = 1;
-  (* dont_touch = "yes" *) logic  fabric_reset = 1;       // Reset for all fabric logic  
+  logic  fabric_reset = 1;       // Reset for all fabric logic
+  (* dont_touch = "yes" *) logic  tempsig = 0;
 
 // Master reset for all fabric logic (active high)
   always_ff @ (posedge clk_100, negedge mmcm_locked)
@@ -70,6 +71,15 @@ module video_top (
           fabric_reset_meta <= 0;
           fabric_reset <= fabric_reset_meta;
         end
+    end
+
+// Temp code to check 100/200 MHz clock alignment
+  always_ff @ (posedge clk_200)
+    begin
+      if (!fabric_reset)
+        tempsig <= 0;
+      else
+        tempsig <= 1;
     end
 
 // Instace Micrblaze processr system via its aut-generated wrapper
