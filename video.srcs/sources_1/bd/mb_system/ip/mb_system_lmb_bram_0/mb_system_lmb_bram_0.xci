@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "mb_system_lmb_bram_0",
-    "cell_name": "lmb_bram",
+    "cell_name": "microblaze_0_local_memory/lmb_bram",
     "component_reference": "xilinx.com:ip:blk_mem_gen:8.4",
     "ip_revision": "10",
     "gen_directory": "../../../../../../video.gen/sources_1/bd/mb_system/ip/mb_system_lmb_bram_0",

@@ -4,7 +4,7 @@
     "xci_name": "mb_system_microblaze_0_axi_periph_imp_auto_pc_0",
     "cell_name": "microblaze_0_axi_periph/m05_couplers/auto_pc",
     "component_reference": "xilinx.com:ip:axi_protocol_converter:2.1",
-    "ip_revision": "34",
+    "ip_revision": "35",
     "gen_directory": "../../../../../../video.gen/sources_1/bd/mb_system/ip/mb_system_microblaze_0_axi_periph_imp_auto_pc_0",
     "parameters": {
       "component_parameters": {
@@ -55,12 +55,12 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "34" } ],
+        "IPREVISION": [ { "value": "35" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../video.gen/sources_1/bd/mb_system/ip/mb_system_microblaze_0_axi_periph_imp_auto_pc_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "rtl" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
-        "SWVERSION": [ { "value": "2024.2.1" } ],
+        "SWVERSION": [ { "value": "2024.2.2" } ],
         "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
       }
     },

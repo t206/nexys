@@ -7,7 +7,7 @@
       "name": "mb_system",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2024.2.1",
+      "tool_version": "2024.2.2",
       "validated": "true"
     },
     "design_tree": {
@@ -949,7 +949,7 @@
         "components": {
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
-            "ip_revision": "35",
+            "ip_revision": "36",
             "xci_name": "mb_system_microblaze_0_axi_periph_upgraded_ipi_imp_xbar_0",
             "xci_path": "ip\\mb_system_microblaze_0_axi_periph_upgraded_ipi_imp_xbar_0\\mb_system_microblaze_0_axi_periph_upgraded_ipi_imp_xbar_0.xci",
             "inst_hier_path": "microblaze_0_axi_periph/xbar",
@@ -1366,7 +1366,7 @@
             "components": {
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
-                "ip_revision": "34",
+                "ip_revision": "35",
                 "xci_name": "mb_system_microblaze_0_axi_periph_imp_auto_pc_0",
                 "xci_path": "ip\\mb_system_microblaze_0_axi_periph_imp_auto_pc_0\\mb_system_microblaze_0_axi_periph_imp_auto_pc_0.xci",
                 "inst_hier_path": "microblaze_0_axi_periph/m05_couplers/auto_pc",
@@ -1680,7 +1680,7 @@
       },
       "ddr_controller_0": {
         "vlnv": "xilinx.com:ip:mig_7series:4.2",
-        "ip_revision": "1",
+        "ip_revision": "2",
         "xci_name": "mb_system_mig_7series_0_0",
         "xci_path": "ip\\mb_system_mig_7series_0_0\\mb_system_mig_7series_0_0.xci",
         "inst_hier_path": "ddr_controller_0",
@@ -1864,8 +1864,8 @@
       "mig_7series_0_ui_addn_clk_0": {
         "ports": [
           "ddr_controller_0/ui_addn_clk_0",
-          "ddr_controller_0/clk_ref_i",
-          "clk_200"
+          "clk_200",
+          "ddr_controller_0/clk_ref_i"
         ]
       },
       "mig_7series_0_ui_addn_clk_1": {
@@ -1915,7 +1915,6 @@
       "rst_mig_7series_0_100M_peripheral_aresetn": {
         "ports": [
           "rst_mig_7series_0_100M/peripheral_aresetn",
-          "ddr_controller_0/aresetn",
           "microblaze_0_axi_intc/s_axi_aresetn",
           "axi_gpio_1/s_axi_aresetn",
           "axi_iic_0/s_axi_aresetn",
@@ -1930,7 +1929,8 @@
           "microblaze_0_axi_periph/M03_ARESETN",
           "microblaze_0_axi_periph/M04_ARESETN",
           "microblaze_0_axi_periph/M05_ARESETN",
-          "microblaze_0_axi_periph/M06_ARESETN"
+          "microblaze_0_axi_periph/M06_ARESETN",
+          "ddr_controller_0/aresetn"
         ]
       },
       "sys_clk_1": {

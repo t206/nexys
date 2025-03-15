@@ -45916,7 +45916,7 @@
         <xilinx:systemCLibrary>xtlm</xilinx:systemCLibrary>
         <xilinx:systemCLibrary>xtlm_simple_interconnect_v1_0</xilinx:systemCLibrary>
       </xilinx:systemCLibraries>
-      <xilinx:coreRevision>35</xilinx:coreRevision>
+      <xilinx:coreRevision>36</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLKIF.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLKIF.ASSOCIATED_PORT" xilinx:valuePermission="bd"/>
@@ -47286,9 +47286,9 @@
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2024.2.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2024.2.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c175fb96"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9bd1ac17"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="efce123a"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="9f458e86"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="0c138422"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="9c746a2a"/>
